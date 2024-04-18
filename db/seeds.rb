@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+alice = Student.new(name: "Alice", age: 9)
+alice.save
+
+john = Student.new(name: "John", age: 7)
+john.save
+
+puts "alice and john saved sucessfully"
