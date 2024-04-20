@@ -14,3 +14,10 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: 'Cute Dino';
+  src: url("/app/assets/fonts/Cute Dino.ttf") format('truetype');
+  src: url("/app/assets/fonts/Cute Dino.otf") format("otf")
+  /* Add more src declarations for other formats if needed */
+}
