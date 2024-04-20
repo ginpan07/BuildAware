@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "students/moods", to: "students#moods"
+  resources :students do
+    resources :activities
+  end
 
 end
