@@ -20,7 +20,7 @@
         <p>answer 5</p>
       </div>
     </div>
-    <div class="canvas">
+    <div class="canvas" id="myCanvas">
 
     </div>
   </div>
@@ -52,3 +52,37 @@
 </body>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      var painting = false;
+
+      canvas.addEventListener("mousedown", startPosition);
+      canvas.addEventListener("mouseup", endPosition);
+      canvas.addEventListener("mousemove", draw);
+
+      function startPosition(e) {
+          painting = true;
+          draw(e);
+      }
+
+      function endPosition() {
+          painting = false;
+          ctx.beginPath();
+      }
+
+      function draw(e) {
+          if (!painting) return;
+          ctx.lineWidth = 5;
+          ctx.lineCap = "round";
+          ctx.strokeStyle = "#000";
+
+          ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      }
+  });
+</script>
