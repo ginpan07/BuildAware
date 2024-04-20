@@ -33,11 +33,12 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <% if student_signed_in? %>
-              <%= link_to "Login", new_student_session_path, class: "nav-link" %>
-            <% else %>
-              <%= link_to "Login", new_teacher_session_path, class: "nav-link" %>
-            <% end %>
+               <% unless student_signed_in? %>
+                <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
+              <% end %>
+               <% unless teacher_signed_in? %>
+                <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+              <% end %>
           </li>
         <% end %>
       </ul>
