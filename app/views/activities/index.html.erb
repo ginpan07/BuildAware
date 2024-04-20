@@ -1,10 +1,16 @@
 <h1>Please choose an activity</h1>
 
-<!--
+
 <div class="container">
-  <%= @activities.each do |activity| %>
+  <% @activities.each do |activity| %>
+  <%= link_to activity.activities, student_activity_path(current_student.id, activity.id)  %>
   <p><%= activity.activities %></p>
-  <span><%= activity.image %></span>
+  <% if activity.activities == "hug" %>
+      <lord-icon
+          src="https://cdn.lordicon.com/zxlywduw.json"
+          trigger="hover"
+          style="width:250px;height:250px">
+      </lord-icon>
+  <% end %>
   <% end %>
 </div>
--->
