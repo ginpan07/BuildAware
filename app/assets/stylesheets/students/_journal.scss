@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Permanent+Marker&display=swap');
+
+
 @font-face {
   font-family: 'Cute Dino';
   src: url('/app/assets/fonts/Cute Dino.ttf') format('truetype');
@@ -10,9 +13,11 @@ body {
 }
 
 h1 {
-  font-family: 'Cute Dino';
   color: #F2C18D;
   text-align: center;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .container {
