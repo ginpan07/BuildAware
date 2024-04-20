@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Cute Dino';
+  src: url('/app/assets/fonts/Cute Dino.ttf') format('truetype');
+  src: url("/app/assets/fonts/Cute Dino.otf") format("otf")
+  /* Add more src declarations for other formats if needed */
+}
+
+body {
+  background-color: #C5EBAA;
+}
+
+h1 {
+  font-family: 'Cute Dino';
+  color: #F2C18D;
+  text-align: center;
+}
+
+.container {
+  background-color: #F2C18D;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.container h4 {
+  color: #F6F193;
+  text-align: center;
+}
+
+.container-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer {
+  background-color: #F6F193;
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.canvas {
+  background-color: #F6F193;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.clock {
+  background-color: #F6F193;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
