@@ -5,26 +5,31 @@
   <div class="container-body">
     <div class="answers">
       <div class="answer" id="answer-1">
+        <a class="no-style" href="/students/:student_id/activities">
         <p>answer 1</p>
       </div>
       <div class="answer" id="answer-2">
+        <a class="no-style" href="/students/:student_id/activities">
         <p>answer 2</p>
       </div>
       <div class="answer" id="answer-3">
+        <a class="no-style" href="/students/:student_id/activities">
         <p>answer 3</p>
       </div>
       <div class="answer" id="answer-4">
+        <a class="no-style" href="/students/:student_id/activities">
         <p>answer 4</p>
       </div>
       <div class="answer" id="answer-5">
+        <a class="no-style" href="/students/:student_id/activities">
         <p>answer 5</p>
       </div>
     </div>
-    <div class="canvas" id="myCanvas">
+    <canvas class="canvas" id="myCanvas">
 
-    </div>
+    </canvas>
   </div>
-  <div class="clock">
+  <%# <div class="clock">
     <body>
       <button>Start Activity</button>
     <div><span id="time"></span></div>
@@ -50,39 +55,55 @@
 };
 </script>
 </body>
-  </div>
+  </div> %>
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      var painting = false;
+document.addEventListener("DOMContentLoaded", function() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var painting = false;
 
-      canvas.addEventListener("mousedown", startPosition);
-      canvas.addEventListener("mouseup", endPosition);
-      canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
 
-      function startPosition(e) {
-          painting = true;
-          draw(e);
-      }
+    // Touch events
+    canvas.addEventListener("touchstart", startPosition);
+    canvas.addEventListener("touchend", endPosition);
+    canvas.addEventListener("touchmove", draw);
 
-      function endPosition() {
-          painting = false;
-          ctx.beginPath();
-      }
+    function startPosition(e) {
+        painting = true;
+        draw(e);
+    }
 
-      function draw(e) {
-          if (!painting) return;
-          ctx.lineWidth = 5;
-          ctx.lineCap = "round";
-          ctx.strokeStyle = "#000";
+    function endPosition() {
+        painting = false;
+        ctx.beginPath();
+    }
 
-          ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-      }
-  });
+    function draw(e) {
+        if (!painting) return;
+        ctx.lineWidth = 5;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#000";
+
+        // Get touch or mouse coordinates
+        var x, y;
+        if (e.type.startsWith("touch")) {
+            x = e.touches[0].clientX - canvas.offsetLeft;
+            y = e.touches[0].clientY - canvas.offsetTop;
+        } else {
+            x = e.clientX - canvas.offsetLeft;
+            y = e.clientY - canvas.offsetTop;
+        }
+
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+});
+
 </script>
