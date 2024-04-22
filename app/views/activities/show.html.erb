@@ -1,12 +1,28 @@
-<h1>Now please do the following () </h1>
+<h1>Please do the following: <%= @activity.activities %> </h1>
 
 <div class="container">
-  <%= @activitiy.activities %>
-  <% if @activity.activities == "hug" %>
-    <lord-icon
-        src="https://cdn.lordicon.com/zxlywduw.json"
-        trigger="hover"
-        style="width:250px;height:250px">
-    </lord-icon>
+  <% if @activity.activities == "Hug a teddy bear!" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+      <lord-icon
+          src="https://cdn.lordicon.com/zxlywduw.json"
+          trigger="hover"
+
+          style="width:250px;height:250px">
+  <% elsif @activity.activities == "Speed walk outside the classroom!" %>
+     <!-- code here
+
+     -->
+  <% elsif @activity.activities == "Dance with your teacher/friend!" %>
+      <!-- code here
+
+     -->
+  <% elsif @activity.activities == "Draw on a piece of paper!" %>
+      <!-- code here
+
+     -->
+  <% elsif @activity.activities == "Write on a piece of paer!" %>
+     <!-- code here
+
+     -->
   <% end %>
 </div>
