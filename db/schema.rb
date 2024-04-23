@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_142710) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.bigint "classroom_id", null: false
+    t.bigint "classroom_id"
     t.index ["classroom_id"], name: "index_students_on_classroom_id"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true

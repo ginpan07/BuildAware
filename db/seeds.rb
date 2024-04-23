@@ -31,7 +31,7 @@ StudentActivity.create(activities: "Hug a teddy bear!", image: "https://cdn.icon
 StudentActivity.create(activities: "Speed walk outside the classroom!", image: "https://cdn.iconscout.com/icon/premium/png-256-thumb/walk-109066.png", student_id: 2)
 StudentActivity.create(activities: "Dance with your teacher/friend!", image: "https://cdn-icons-png.freepik.com/512/7779/7779711.png", student_id: 3)
 StudentActivity.create(activities: "Draw on a piece of paper!", image: "https://cdn-icons-png.flaticon.com/512/191/191714.png", student_id: 4)
-StudentActivity.create(activities: "Write on a piece of paer!", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2r_-qet7K5aYWPwSujqWgB7HNEp9Vmchgsxd1KbGvQw&s", student_id: 5)
+StudentActivity.create(activities: "Write on a piece of paper!", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2r_-qet7K5aYWPwSujqWgB7HNEp9Vmchgsxd1KbGvQw&s", student_id: 5)
 # Create StudentActivity instances
 StudentActivity.create([
   { activities: "Hug", image: "https://cdn.iconscout.com/icon/premium/png-256-thumb/hug-1488452-1259796.png", student_id: 1 },
