@@ -4,7 +4,6 @@ class CreateStudents < ActiveRecord::Migration[7.1]
       t.string :name
       t.integer :age
       t.references :classroom, null: false, foreign_key: true
-
       t.timestamps
     end
   end
