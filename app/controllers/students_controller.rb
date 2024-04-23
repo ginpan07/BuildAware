@@ -12,6 +12,10 @@ class StudentsController < ApplicationController
 
   end
 
+  def show
+
+  end
+
   private
 
   def student_params
