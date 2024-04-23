@@ -34,12 +34,12 @@
           <% if request.env['HTTP_REFERER'].present? && request.env['HTTP_REFERER'].include?('students') %>
             <!-- If the referring page contains 'students' in the URL, show the student login link -->
             <li class="nav-item">
-              <%= link_to "Login", new_student_session_path, class: "nav-link" %>
+              <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
             </li>
           <% else %>
             <!-- Otherwise, show the teacher login link -->
             <li class="nav-item">
-              <%= link_to "Login", new_teacher_session_path, class: "nav-link" %>
+              <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
             </li>
           <% end %>
         <% end %>
