@@ -10,22 +10,26 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <!-- Home link -->
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-
         <% if student_signed_in? || teacher_signed_in? %>
           <!-- If a student or teacher is already signed in, show the logout dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
+            <% if student_signed_in? %>
+              <% user = current_student %>
+            <% else %>
+              <% user = current_teacher %>
+            <% end %>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag user.avatar_url, class: "avatar", alt: "dropdown menu" %>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= content_tag :li, class: "dropdown-item" do %>
-                <%= link_to "Logout", student_signed_in? ? destroy_student_session_path : destroy_teacher_session_path, data: {turbo_method: :delete} %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <% if student_signed_in? %>
+                <%= link_to "Log out", destroy_student_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Log out", destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <% end %>
-            </ul>
+            </div>
           </li>
         <% else %>
           <!-- If no user is signed in, show the appropriate login link based on email domain -->
