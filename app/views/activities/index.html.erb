@@ -3,14 +3,8 @@
 
 <div class="container">
   <% @activities.each do |activity| %>
-  <%= link_to activity.activities, student_activity_path(current_student.id, activity.id)  %>
-  <p><%= activity.activities %></p>
-  <% if activity.activities == "hug" %>
-      <lord-icon
-          src="https://cdn.lordicon.com/zxlywduw.json"
-          trigger="hover"
-          style="width:250px;height:250px">
-      </lord-icon>
-  <% end %>
+    <div class="activity-card">
+      <%= link_to activity.activities, student_activity_path(current_student.id, activity.id), class: "card-link"%>
+    </div>
   <% end %>
 </div>
