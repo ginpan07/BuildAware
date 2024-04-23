@@ -31,3 +31,9 @@ StudentActivity.create(activities: "Speed walk outside the classroom!", image: "
 StudentActivity.create(activities: "Dance with your teacher/friend!", image: "https://cdn-icons-png.freepik.com/512/7779/7779711.png", student_id: 3)
 StudentActivity.create(activities: "Draw on a piece of paper!", image: "https://cdn-icons-png.flaticon.com/512/191/191714.png", student_id: 4)
 StudentActivity.create(activities: "Write on a piece of paer!", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2r_-qet7K5aYWPwSujqWgB7HNEp9Vmchgsxd1KbGvQw&s", student_id: 5)
+
+Mood.create(moods: "happy", student_id: 1)
+Mood.create(moods: "angry", student_id: 1)
+Mood.create(moods: "neutral", student_id: 1)
+Mood.create(moods: "sad", student_id: 1)
+Mood.create(moods: "devastated", student_id: 1)
