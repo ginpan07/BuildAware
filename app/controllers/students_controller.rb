@@ -11,4 +11,7 @@ class StudentsController < ApplicationController
   def activities
 
   end
+
+  def show
+  end
 end
