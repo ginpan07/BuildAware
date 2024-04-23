@@ -4,8 +4,84 @@
   <h4>Why are you feeling this way?</h4>
   <div class="container-body">
     <div class="answers">
-      <div class="answer" id="answer-1">
-        <a class="no-style" href="/students/:student_id/activities">
+      <% if @mood == "happy" %>
+        <div class="answer" id="answer-1" a class="no-style" href="/students/:student_id/activities">
+          <p>Playing with my friends and having fun together.</p>
+        </div>
+        <div class="answer" id="answer-2" a class="no-style" href="/students/:student_id/activities">
+          <p>Learning something new and feeling proud.</p>
+        </div>
+        <div class="answer" id="answer-3" a class="no-style" href="/students/:student_id/activities">
+          <p>Spending time with family and feeling loved.</p>
+        </div>
+        <div class="answer" id="answer-4" a class="no-style" href="/students/:student_id/activities">
+          <p>I'm feeling creative.</p>
+        </div>
+      <% elsif @mood == "angry" %>
+        <div class="answer" id="answer-1" a class="no-style" href="/students/:student_id/activities">
+          <p>Feeling unfairly treated or not listened to.</p>
+        </div>
+        <div class="answer" id="answer-2" a class="no-style" href="/students/:student_id/activities">
+          <p>Being teased or bullied by others.</p>
+        </div>
+        <div class="answer" id="answer-3" a class="no-style" href="/students/:student_id/activities">
+          <p>Feeling scared or threatened by something or someone.</p>
+        </div>
+        <div class="answer" id="answer-4" a class="no-style" href="/students/:student_id/activities">
+          <p>Not getting what I want or feeling frustrated.</p>
+        </div>
+      <% elsif @mood == "neutral" %>
+        <div class="answer" id="answer-1" a class="no-style" href="/students/:student_id/activities">
+          <p>Just woke up and haven't fully woken up yet.</p>
+        </div>
+        <div class="answer" id="answer-2" a class="no-style" href="/students/:student_id/activities">
+          <p>Reflecting on my thoughts without experiencing strong emotions.</p>
+        </div>
+        <div class="answer" id="answer-3" a class="no-style" href="/students/:student_id/activities">
+          <p>Waiting for something exciting to happen.</p>
+        </div>
+        <div class="answer" id="answer-4" a class="no-style" href="/students/:student_id/activities">
+          <p>I'm in a comfortable environment where I feel safe and content.</p>
+        </div>
+      <% elsif @mood == "sad" %>
+        <div class="answer" id="answer-1" a class="no-style" href="/students/:student_id/activities">
+          <p>Missing someone I love or care about.</p>
+        </div>
+        <div class="answer" id="answer-2" a class="no-style" href="/students/:student_id/activities">
+          <p>Feeling left out or lonely.</p>
+        </div>
+        <div class="answer" id="answer-3" a class="no-style" href="/students/:student_id/activities">
+          <p>Being hurt physically or emotionally by someone.</p>
+        </div>
+        <div class="answer" id="answer-4" a class="no-style" href="/students/:student_id/activities">
+          <p>Facing a difficult situation or change in my life.</p>
+        </div>
+      <% elsif @mood == "devastated" %>
+        <div class="answer" id="answer-1" a class="no-style" href="/students/:student_id/activities">
+          <p>Feeling betrayed or abandoned by someone I trust.</p>
+        </div>
+        <div class="answer" id="answer-2" a class="no-style" href="/students/:student_id/activities">
+          <p>Experiencing a significant loss or separation.</p>
+        </div>
+        <div class="answer" id="answer-3" a class="no-style" href="/students/:student_id/activities">
+          <p>Confronting a sudden and overwhelming change in my life.</p>
+        </div>
+        <div class="answer" id="answer-4" a class="no-style" href="/students/:student_id/activities">
+          <p>Witnessing something traumatic or upsetting.</p>
+        </div>
+      <% end %>
+    </div>
+    <h4>Draw here</h4>
+    <canvas class="canvas" id="myCanvas">
+
+    </canvas>
+
+
+
+
+
+      <%# <div class="answer" id="answer-1">
+        <a class="no-style" href="/students/:student_id/activities"></a>
         <p>answer 1</p>
       </div>
       <div class="answer" id="answer-2">
@@ -23,39 +99,45 @@
       <div class="answer" id="answer-5">
         <a class="no-style" href="/students/:student_id/activities">
         <p>answer 5</p>
+      </div> %>
+
+    <%# happy. angry, nuetral, sad, devastated %>
+
+      <%# <div class="clock">
+        <button id="startTimerBtn">Start Timer</button>
+        <div><span id="time"></span></div>
       </div>
+
+      <script>
+        window.onload = function () {
+          var display = document.querySelector('#time');
+          var timer;
+          var timeLeft = 120; // Initial time in seconds
+
+          // Function to start the timer
+          function startTimer() {
+            timer = setInterval(function() {
+              if (timeLeft <= 0) {
+                clearInterval(timer);
+                display.textContent = "00:00"; // Timer reached zero
+                return;
+              }
+              var minutes = Math.floor(timeLeft / 60);
+              var seconds = timeLeft % 60;
+              display.textContent = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+              timeLeft--;
+            }, 1000); // Update every second
+          }
+
+          // Event listener for the start timer button
+          document.getElementById('startTimerBtn').addEventListener('click', function () {
+            startTimer();
+          });
+        };
+      </script> %>
+
     </div>
-    <canvas class="canvas" id="myCanvas">
-
-    </canvas>
   </div>
-  <%# <div class="clock">
-    <body>
-      <button>Start Activity</button>
-    <div><span id="time"></span></div>
-  <script>
-    window.onload = function () {
-    var display = document.querySelector('#time'),
-        timer = new CountDownTimer(120),
-        timeObj = CountDownTimer.parse(120);
-
-    format(timeObj.minutes, timeObj.seconds);
-
-    timer.onTick(format);
-
-    document.querySelector('button').addEventListener('click', function () {
-        timer.start();
-    });
-
-    function format(minutes, seconds) {
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = minutes + ':' + seconds;
-    }
-};
-</script>
-</body>
-  </div> %>
 </div>
 
 <script>

@@ -35,11 +35,3 @@ classroom = Classroom.create!(
     puts "Error creating user: #{student.errors.full_messages}"
   end
 end
-# Create StudentActivity instances
-StudentActivity.create([
-  { activities: "Hug", student_id: 1 },
-  { activities: "Walk", student_id: 2 },
-  { activities: "Dance", student_id: 3 },
-  { activities: "Draw", student_id: 4 },
-  { activities: "Write", student_id: 5 }
-])
