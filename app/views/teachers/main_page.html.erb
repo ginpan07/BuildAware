@@ -1,0 +1,7 @@
+<h1>Welcome <%= @teacher.name %></h1>
+
+<h2>Your Classes:</h2>
+<% @classrooms.each do |classroom| %>
+  <p><%= classroom.name %></p>
+  <!-- Add any additional information you want to display -->
+<% end %>
