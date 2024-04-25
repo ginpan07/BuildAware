@@ -35,6 +35,8 @@ h1 {
 }
 
 .answer {
+  text-decoration: none;
+  color: inherit;
   background-color: #F6F193;
   margin-top: 30px;
   padding-left: 10px;
@@ -47,10 +49,12 @@ h1 {
 
 .canvas {
   background-color: #F6F193;
-  // width: 500px;
-  // height: 300px;
   border-radius: 10px;
   cursor: crosshair;
+}
+
+#canvas-container {
+  width: 600px;
 }
 
 .clock {
