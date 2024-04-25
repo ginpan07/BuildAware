@@ -37,3 +37,9 @@ classroom = Classroom.create!(
     puts "Error creating user: #{student.errors.full_messages}"
   end
 end
+
+StudentActivity.create(activities: "Hug a teddy bear!" , student_id: 1 )
+StudentActivity.create(activities: "Speed walk outside the classroom!" , student_id: 2 )
+StudentActivity.create(activities: "Dance with your teacher/friend!" , student_id: 3 )
+StudentActivity.create(activities: "Draw on a piece of paper!" , student_id: 4 )
+StudentActivity.create(activities: "Write on a piece of paper!" , student_id: 5 )
