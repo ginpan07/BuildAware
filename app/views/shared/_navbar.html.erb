@@ -3,45 +3,43 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if student_signed_in? || teacher_signed_in? %>
-          <!-- If a student or teacher is already signed in, show the logout dropdown -->
-          <li class="nav-item dropdown">
-            <% if student_signed_in? %>
-              <% user = current_student %>
-            <% else %>
-              <% user = current_teacher %>
-            <% end %>
+        <!-- Home link -->
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
 
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <% if student_signed_in? %>
-                <%= link_to "Log out", destroy_student_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <% else %>
-                <%= link_to "Log out", destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        <!-- Student Login -->
+        <li class="nav-item">
+          <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
+        </li>
+
+        <!-- Teacher Login -->
+        <li class="nav-item">
+          <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+        </li>
+
+        <!-- Logout dropdown -->
+        <% if student_signed_in? || teacher_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= content_tag :li, class: "dropdown-item" do %>
+                <%= link_to "Logout", student_signed_in? ? destroy_student_session_path : destroy_teacher_session_path, data: {turbo_method: :delete} %>
               <% end %>
-            </div>
+            </ul>
           </li>
-        <% else %>
-          <!-- If no user is signed in, show the appropriate login link based on email domain -->
-          <% if request.env['HTTP_REFERER'].present? && request.env['HTTP_REFERER'].include?('students') %>
-            <!-- If the referring page contains 'students' in the URL, show the student login link -->
-            <li class="nav-item">
-              <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
-            </li>
-          <% else %>
-            <!-- Otherwise, show the teacher login link -->
-            <li class="nav-item">
-              <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
