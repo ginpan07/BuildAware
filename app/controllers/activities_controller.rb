@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = StudentActivity.all
+    @mood = params[:mood]
   end
 
   def show
