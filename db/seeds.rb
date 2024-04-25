@@ -18,12 +18,14 @@ teacher = Teacher.create!(
 classroom = Classroom.create!(
   teacher: teacher
 )
+
 # puts classroom
 # Create Student instances associated with the Classroom
+
 10.times do
   student = Student.new(
     name: Faker::Name.first_name,
-    age: Faker::Number.number(digits: 2),
+    age: Faker::Number.number(digits: 1),
     email: Faker::Internet.email,
     password: '123456',
     classroom_id: classroom.id
