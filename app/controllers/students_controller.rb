@@ -4,7 +4,8 @@ class StudentsController < ApplicationController
 
   def journal
     @mood = params[:mood]
-    @student_id = params[:student_id]
+    @student_id = Student.find(params[:student_id])
+    @student = current_student
   end
 
   def moods
