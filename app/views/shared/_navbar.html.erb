@@ -15,16 +15,6 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
 
-        <!-- Student Login -->
-        <li class="nav-item">
-          <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
-        </li>
-
-        <!-- Teacher Login -->
-        <li class="nav-item">
-          <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
-        </li>
-
         <!-- Logout dropdown -->
         <% if student_signed_in? || teacher_signed_in? %>
           <li class="nav-item dropdown">
@@ -37,9 +27,18 @@
               <% end %>
             </ul>
           </li>
+        <% else %>
+          <!-- Student Login -->
+          <li class="nav-item">
+            <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
+          </li>
+
+          <!-- Teacher Login -->
+          <li class="nav-item">
+            <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
-
