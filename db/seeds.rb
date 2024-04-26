@@ -16,7 +16,8 @@ teacher = Teacher.create!(
   password: '123456'
 )
 classroom = Classroom.create!(
-  teacher: teacher
+  teacher: teacher,
+  name: Faker::Name.first_name
 )
 
 # puts classroom

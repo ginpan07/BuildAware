@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     resources :activities
   end
 
+  get 'teacher-main-page', to: 'teachers#main_page', as: 'teacher_main_page'
+  
 end
