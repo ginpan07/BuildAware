@@ -39,8 +39,43 @@ classroom = Classroom.create!(
   end
 end
 
-StudentActivity.create(activities: "Hug a teddy bear!" , student_id: 1 )
-StudentActivity.create(activities: "Speed walk outside the classroom!" , student_id: 2 )
-StudentActivity.create(activities: "Dance with your teacher/friend!" , student_id: 3 )
-StudentActivity.create(activities: "Draw on a piece of paper!" , student_id: 4 )
-StudentActivity.create(activities: "Write on a piece of paper!" , student_id: 5 )
+# Happy
+Activity.create(description: "Hug a teddy bear!")
+Activity.create(description: "Speed walk outside the classroom!")
+Activity.create(description: "Dance with your teacher/friend!")
+Activity.create(description: "Draw on anger a piece of paper!")
+Activity.create(description: "Ask a friend if they are okay")
+
+# Angry - done
+Activity.create(description: "Talk to a friend you like")
+Activity.create(description: "Draw a picture of your anger")
+Activity.create(description: "Run outside the classrom five times")
+Activity.create(description: "Draw on a piece of paper!")
+Activity.create(description: "Take 10 long breathes")
+
+# Neutral
+Activity.create(description: "Hug a teddy bear!")
+Activity.create(description: "Speed walk outside the classroom!")
+Activity.create(description: "Dance with your teacher/friend!")
+Activity.create(description: "Draw on a piece of paper!")
+Activity.create(description: "Write on a piece of paper!")
+
+# Sad - done
+Activity.create(description: "Hug a teddy bear!")
+Activity.create(description: "Talk to a friend you trust")
+Activity.create(description: "Take 10 calm belly breaths")
+Activity.create(description: "Draw/Write sadness on a piece of paper!")
+Activity.create(description: "Listen to a music")
+
+# Devastated
+Activity.create(description: "Hug a teddy bear!")
+Activity.create(description: "Speed walk outside the classroom!")
+Activity.create(description: "Dance with your teacher/friend!")
+Activity.create(description: "Draw on anger a piece of paper!")
+Activity.create(description: "Ask a friend if they are okay")
+
+StudentActivity.create(student_id: Student.first.id, activity_id: Activity.first.id)
+StudentActivity.create(student_id: Student.second.id, activity_id: Activity.second.id)
+StudentActivity.create(student_id: Student.third.id, activity_id: Activity.third.id)
+StudentActivity.create(student_id: Student.fourth.id, activity_id: Activity.fourth.id)
+StudentActivity.create(student_id: Student.fifth.id, activity_id: Activity.fifth.id)
