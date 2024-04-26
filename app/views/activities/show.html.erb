@@ -1,40 +1,36 @@
-<h1>Please do the following: <%= @activity.activities %> </h1>
+<h1>Please do the following: <%= @activity.description %> </h1>
 
-<div class="container-activities">
-
-  <% if @activity.activities == "Hug a teddy bear!" %>
+<div class="container">
+  <% if @activity.description == "Hug a teddy bear!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <lord-icon
-          src="https://cdn.lordicon.com/rqfngcuq.json"
-          trigger="loop"
-          delay="1000"
-          style="width:350px;height:350px">
-</lord-icon>
-  <% elsif @activity.activities == "Speed walk outside the classroom!" %>
+      <lord-icon
+          src="https://cdn.lordicon.com/zxlywduw.json"
+          trigger="hover"
+
+          style="width:250px;height:250px">
+  <% elsif @activity.description == "Speed walk outside the classroom!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
          src="https://cdn.lordicon.com/vkycdaci.json"
-         trigger="loop"
-         state="loop-cycle"
-         style="width:350px;height:350px">
-         </lord-icon>
-  <% elsif @activity.activities == "Dance with your teacher/friend!" %>
+         trigger="hover"
+
+         style="width:250px;height:250px">
+  <% elsif @activity.description == "Dance with your teacher/friend!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
              src="https://cdn.lordicon.com/lnmgxmyk.json"
              trigger="loop"
              delay="500"
 
-             style="width:350px;height:350px">
-  <% elsif @activity.activities == "Draw on a piece of paper!" %>
+          style="width:250px;height:250px">
+  <% elsif @activity.description == "Draw on a piece of paper!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
         src="https://cdn.lordicon.com/bksjdgoo.json"
         trigger="loop"
 
-        style="width:350px;height:350px">
-        </lord-icon>
-  <% elsif @activity.activities == "Write on a piece of paper!" %>
+        style="width:250px;height:250px">
+  <% elsif @activity.description == "Write on a piece of paper!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
        src="https://cdn.lordicon.com/lsrcesku.json"
