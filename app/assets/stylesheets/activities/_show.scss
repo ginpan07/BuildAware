@@ -1,0 +1,42 @@
+.container-lord {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ten-countdown {
+  /* text-align: center; */
+  border: 5px solid #004853;
+  display: inline;
+  padding: 5px;
+  color: #004853;
+  font-family: Verdana, sans-serif, Arial;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  padding: 20px;
+  text-align: center;
+}
+
+.div-activities {
+  border: 5px solid #004853;
+  display: inline;
+  padding: 5px;
+  color: #004853;
+  font-family: Verdana, sans-serif, Arial;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.countdown {
+  background-color: #f2c18d;
+  border-radius: 20px;
+  border: 10px solid #f6f193;
+  padding: 30px;
+}

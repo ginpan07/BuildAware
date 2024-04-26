@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_111159) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["teacher_id"], name: "index_classrooms_on_teacher_id"
   end
 
