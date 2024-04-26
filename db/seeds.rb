@@ -16,14 +16,17 @@ teacher = Teacher.create!(
   password: '123456'
 )
 classroom = Classroom.create!(
-  teacher: teacher
+  teacher: teacher,
+  name: Faker::Name.first_name
 )
+
 # puts classroom
 # Create Student instances associated with the Classroom
+
 10.times do
   student = Student.new(
     name: Faker::Name.first_name,
-    age: Faker::Number.number(digits: 2),
+    age: Faker::Number.number(digits: 1),
     email: Faker::Internet.email,
     password: '123456',
     classroom_id: classroom.id
@@ -35,3 +38,9 @@ classroom = Classroom.create!(
     puts "Error creating user: #{student.errors.full_messages}"
   end
 end
+
+StudentActivity.create(activities: "Hug a teddy bear!" , student_id: 1 )
+StudentActivity.create(activities: "Speed walk outside the classroom!" , student_id: 2 )
+StudentActivity.create(activities: "Dance with your teacher/friend!" , student_id: 3 )
+StudentActivity.create(activities: "Draw on a piece of paper!" , student_id: 4 )
+StudentActivity.create(activities: "Write on a piece of paper!" , student_id: 5 )
