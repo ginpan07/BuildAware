@@ -4,7 +4,7 @@
 <div class="container">
   <% @activities.each do |activity| %>
     <div class="activity-card">
-      <% #if @mood == "happy" %>
+     <% if @mood == "happy" %>
       <%= link_to activity.activities, student_activity_path(current_student.id, activity.id), class: "card-link"%>
       <% end %>
     </div>
