@@ -65,7 +65,7 @@ Activity.create(description: "Hug a teddy bear!")
 Activity.create(description: "Talk to a friend you trust")
 Activity.create(description: "Take 10 calm belly breaths")
 Activity.create(description: "Draw/Write sadness on a piece of paper!")
-Activity.create(description: "Listen to a music")
+Activity.create(description: "Listen to music")
 
 # Devastated
 Activity.create(description: "Hug a teddy bear!")
