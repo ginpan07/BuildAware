@@ -3,7 +3,7 @@
 <h2>Your Classes:</h2>
 <div class="card-deck">
   <% @classrooms.each do |classroom| %>
-    <a href=# class="card-link">
+    <a href="<%= mood_summary_teacher_classroom_path(classroom) %>" class="card-link">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= classroom.name %></h5>

@@ -27,8 +27,10 @@ classroom = Classroom.create!(
     age: Faker::Number.number(digits: 2),
     email: Faker::Internet.email,
     password: '123456',
-    classroom_id: classroom.id
+    classroom_id: classroom.id,
   )
+
+  student.moods.build(mood: "happy")
 
   if student.save
     puts "User created with email: #{student.email}"

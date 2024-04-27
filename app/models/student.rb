@@ -4,4 +4,5 @@ class Student < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   belongs_to :classroom
+  has_many :moods
 end
