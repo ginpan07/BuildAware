@@ -39,40 +39,40 @@ classroom = Classroom.create!(
   end
 end
 
-# Happy
-Activity.create(description: "Hug a teddy bear!")
-Activity.create(description: "Speed walk outside the classroom!")
-Activity.create(description: "Dance with your teacher/friend!")
-Activity.create(description: "Draw anger on a piece of paper!")
-Activity.create(description: "Ask a friend if they are okay")
+# Happy - done
+Activity.create(description: "Hug your best friend!", moods: "Happy")
+Activity.create(description: "Check in with your best friend!", moods: "Happy")
+Activity.create(description: "Dance with your teacher/friend!", moods: "Happy")
+Activity.create(description: "Draw happiness on a piece of paper!", moods: "Happy")
+Activity.create(description: "Ask a friend if they are okay", moods: "Happy")
 
 # Angry - done
-Activity.create(description: "Talk to a friend you like")
-Activity.create(description: "Draw a picture of your anger")
-Activity.create(description: "Run outside the classrom five times")
-Activity.create(description: "Draw on a piece of paper!")
-Activity.create(description: "Take 10 long breathes")
+Activity.create(description: "Talk to a friend you like", moods: "Angry")
+Activity.create(description: "Draw a picture of your anger", moods: "Angry")
+Activity.create(description: "Run outside the classrom five times", moods: "Angry")
+Activity.create(description: "Draw on a piece of paper!", moods: "Angry")
+Activity.create(description: "Take 10 long breathes", moods: "Angry")
 
-# Neutral
-Activity.create(description: "Hug a teddy bear!")
-Activity.create(description: "Speed walk outside the classroom!")
-Activity.create(description: "Dance with your teacher/friend!")
-Activity.create(description: "Draw on a piece of paper!")
-Activity.create(description: "Write on a piece of paper!")
+# Neutral -done
+Activity.create(description: "Hug a teddy bear!", moods: "Neutral")
+Activity.create(description: "Speed walk outside the classroom!", moods: "Neutral")
+Activity.create(description: "Jog around the block!", moods: "Neutral")
+Activity.create(description: "Draw on a piece of paper!", moods: "Neutral")
+Activity.create(description: "Write on a piece of paper!", moods: "Neutral")
 
 # Sad - done
-Activity.create(description: "Hug a teddy bear!")
-Activity.create(description: "Talk to a friend you trust")
-Activity.create(description: "Take 10 calm belly breaths")
-Activity.create(description: "Draw/Write sadness on a piece of paper!")
-Activity.create(description: "Listen to a music")
+Activity.create(description: "Hug a teddy bear!", moods: "Sad")
+Activity.create(description: "Talk to a friend you trust", moods: "Sad")
+Activity.create(description: "Take 10 calm belly breaths", moods: "Sad")
+Activity.create(description: "Draw/Write sadness on a piece of paper", moods: "Sad")
+Activity.create(description: "Listen to a music", moods: "Sad")
 
-# Devastated
-Activity.create(description: "Hug a teddy bear!")
-Activity.create(description: "Speed walk outside the classroom!")
-Activity.create(description: "Dance with your teacher/friend!")
-Activity.create(description: "Draw anger on a piece of paper!")
-Activity.create(description: "Ask a friend if they are okay")
+# Devastated - done
+Activity.create(description: "Talk with teacher", moods: "Devastated")
+Activity.create(description: "Chat with a friend", moods: "Devastated")
+Activity.create(description: "Hug a teddy bear/someone you like", moods: "Devastated")
+Activity.create(description: "Draw anything on a piece of paper", moods: "Devastated")
+Activity.create(description: "Write down your feelings", moods: "Devastated")
 
 StudentActivity.create(student_id: Student.first.id, activity_id: Activity.first.id)
 StudentActivity.create(student_id: Student.second.id, activity_id: Activity.second.id)

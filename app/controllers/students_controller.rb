@@ -15,12 +15,9 @@ class StudentsController < ApplicationController
   end
 
   def activities
-    @mood = params[:mood]
-    @student_id = current_student
   end
 
   def show
-
   end
 
   private
@@ -28,5 +25,4 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :age, :email, :password, :classroom_id)
   end
-
 end
