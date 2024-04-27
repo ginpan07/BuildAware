@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jersey+20&display=swap');
 
+.container {
+
+}
+
+.activity-container{
+  justify-content: center;
+  align-items: center;
+}
 
 .activity-card {
-  margin: 5px;
-  padding: 5px;
   border-style: outset;
   margin-bottom: 10px;
   // font-family: "Jersey 20", sans-serif;
@@ -41,11 +47,10 @@
 .card-link:hover {
   text-decoration: none;
   color: darkblue;
-  font-size: 33px;
+
 }
 
 .activity-card:hover {
   border-style: inset;
-  color: darkblue;
-  font-size: 33px;
+  background-color: #d4d081;
 }
