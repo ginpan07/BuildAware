@@ -3,6 +3,7 @@
 <div class="container" data-controller="canvas">
 
   <h4>Why are you feeling this way?</h4>
+  <div id="ten-countdown"></div>
   <div class="container-body">
     <div class="answers">
       <% if @mood == "happy" %>
@@ -82,7 +83,7 @@
         <% end %>
       <% end %>
     </div>
-    <div id="ten-countdown"></div>
+
     <div id="canvas-container">
       <h4>Draw here</h4>
       <canvas class="canvas" id="myCanvas">
