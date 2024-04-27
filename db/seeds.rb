@@ -43,7 +43,7 @@ end
 Activity.create(description: "Hug a teddy bear!")
 Activity.create(description: "Speed walk outside the classroom!")
 Activity.create(description: "Dance with your teacher/friend!")
-Activity.create(description: "Draw on anger a piece of paper!")
+Activity.create(description: "Draw anger on a piece of paper!")
 Activity.create(description: "Ask a friend if they are okay")
 
 # Angry - done
@@ -71,7 +71,7 @@ Activity.create(description: "Listen to a music")
 Activity.create(description: "Hug a teddy bear!")
 Activity.create(description: "Speed walk outside the classroom!")
 Activity.create(description: "Dance with your teacher/friend!")
-Activity.create(description: "Draw on anger a piece of paper!")
+Activity.create(description: "Draw anger on a piece of paper!")
 Activity.create(description: "Ask a friend if they are okay")
 
 StudentActivity.create(student_id: Student.first.id, activity_id: Activity.first.id)
