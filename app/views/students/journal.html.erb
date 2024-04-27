@@ -1,6 +1,7 @@
 <h1>Journal</h1>
 
 <div class="container" data-controller="canvas">
+
   <h4>Why are you feeling this way?</h4>
   <div class="container-body">
     <div class="answers">
@@ -81,6 +82,7 @@
         <% end %>
       <% end %>
     </div>
+    <div id="ten-countdown"></div>
     <div id="canvas-container">
       <h4>Draw here</h4>
       <canvas class="canvas" id="myCanvas">
@@ -88,10 +90,7 @@
     </div>
     </div>
   </div>
-</div>
-<div class="countdown">
-<div id="ten-countdown"></div>
-</div>
+
 <script>
   function countdown( elementName, minutes, seconds )
 {
