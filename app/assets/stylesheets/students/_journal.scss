@@ -21,6 +21,7 @@ h1 {
   border: 10px outset #f6f193;
   padding: 30px;
   outline: 2px solid black;
+  box-shadow: 0 0 0 1px black inset;
 }
 
 .container h4 {
@@ -57,6 +58,18 @@ h1 {
   font-weight: bold;
   background-color: #f6f193;
   outline: 2px solid black;
+  box-shadow: 0 0 0 1px black inset;
+}
+
+.answer:hover {
+  background-color: #d4d081;
+  border-style: inset;
+}
+
+.answer:active {
+  background-color: #A5DD9B;
+  transform: translateY(4px);
+  border-color: #A5DD9B;
 }
 
 .answers {
@@ -66,7 +79,7 @@ h1 {
 .canvas {
   background-color: #f6f193;
   border: 10px outset #d4d081;
-
+  box-shadow: 0 0 0 1px black inset;
   border-radius: 10px;
   margin-right: 20px;
   outline: 2px solid black;
