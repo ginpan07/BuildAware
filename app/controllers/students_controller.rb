@@ -1,10 +1,14 @@
 class StudentsController < ApplicationController
-  skip_before_action :authenticate_student!
 
+
+  # skip_before_action :authenticate_student!
+  skip_before_action :authenticate_student!
+  
   def journal
     @mood = params[:mood]
-    @student_id = Student.find(params[:student_id])
-    @student = current_student
+    @student_id = params[:student_id]
+
+    current_student.moods.create(mood: params[:mood])
   end
 
   def moods
