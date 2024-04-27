@@ -1,32 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Permanent+Marker&display=swap");
+@import url("https://fonts.google.com/specimen/Happy+Monkey?query=happy");
 
 body {
-  background-color: #C5EBAA;
+  background-color: #c5ebaa;
 }
 
 h1 {
-  color: #F2C18D;
+  color: #f2c18d;
   text-align: center;
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 70px;
   font-style: normal;
+  -webkit-text-stroke: 2px black;
 }
 
 .container {
-  background-color: #F2C18D;
+  background-color: #f2c18d;
   border-radius: 20px;
-  border: 10px solid #F6F193;
+  border: 10px outset #f6f193;
   padding: 30px;
+  outline: 2px solid black;
 }
 
 .container h4 {
-  color: #F6F193;
+  color: #f6f193;
   text-align: center;
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 40px;
   font-style: normal;
+  -webkit-text-stroke: 2px black;
 }
 
 .container-body {
@@ -35,29 +39,38 @@ h1 {
 }
 
 .answer {
-  background-color: #F6F193;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Happy Monkey", cursive;
+  font-size: 18px;
+  min-height: 100px;
   margin-top: 30px;
   padding-left: 10px;
+  padding-right: 10px;
   padding-top: 5px;
-  width: 300px;
+  min-width: 400px;
   border-radius: 10px;
-  border-style: groove;
-  border-color: #F6F193;
+  border: 6px outset #d4d081;
+  font-weight: bold;
+  background-color: #f6f193;
+  outline: 2px solid black;
+}
+
+.answers {
+  margin-left: 20px;
 }
 
 .canvas {
-  background-color: #F6F193;
-  // width: 500px;
-  // height: 300px;
-  border-radius: 10px;
-  cursor: crosshair;
-}
 
-.clock {
   background-color: #F6F193;
-  width: 100px;
-  height: 100px;
+  border: 10px outset #d4d081;
+
   border-radius: 10px;
+  margin-right: 20px;
+  outline: 2px solid black;
+  cursor: crosshair;
 }
 
 .no-style {

@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_27_040043) do
+
+ActiveRecord::Schema[7.1].define(version: 2024_04_27_010928) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "moods"
+  end
 
   create_table "classrooms", force: :cascade do |t|
     t.bigint "teacher_id", null: false
@@ -35,6 +44,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_040043) do
     t.bigint "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "activity_id", null: false
+    t.index ["activity_id"], name: "index_student_activities_on_activity_id"
     t.index ["student_id"], name: "index_student_activities_on_student_id"
   end
 
@@ -69,6 +80,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_040043) do
 
   add_foreign_key "classrooms", "teachers"
   add_foreign_key "moods", "students"
+  add_foreign_key "student_activities", "activities"
   add_foreign_key "student_activities", "students"
   add_foreign_key "students", "classrooms"
 end

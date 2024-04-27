@@ -1,40 +1,252 @@
-<h1>Please do the following: <%= @activity.activities %> </h1>
+<h1>Please do the following: <%= @activity.description %> </h1>
 
-<div class="container">
-  <% if @activity.activities == "Hug a teddy bear!" %>
+<div class="container-icon">
+
+<!-- Happy -->
+
+  <% if @activity.description == "Hug your best friend!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
-      <lord-icon
-          src="https://cdn.lordicon.com/zxlywduw.json"
-          trigger="hover"
+          <lord-icon
+              src="https://cdn.lordicon.com/zxlywduw.json"
+              trigger="loop"
+              delay= "1000"
+              style="width:350px;height:350px">
 
-          style="width:250px;height:250px">
-  <% elsif @activity.activities == "Speed walk outside the classroom!" %>
+  <% elsif @activity.description == "Check in with your best friend!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
-         src="https://cdn.lordicon.com/vkycdaci.json"
-         trigger="hover"
+              src="https://cdn.lordicon.com/kiynvdns.json"
+              trigger="loop"
+              delay="1000"
+              style="width:350px;height:350px">
 
-         style="width:250px;height:250px">
-  <% elsif @activity.activities == "Dance with your teacher/friend!" %>
+  <% elsif @activity.description == "Dance with your teacher/friend!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
-      <lord-icon
-          src="https://cdn.lordicon.com/lnmgxmyk.json"
-          trigger="hover"
+          <lord-icon
+             src="https://cdn.lordicon.com/lnmgxmyk.json"
+             trigger="loop"
+             delay="500"
 
-          style="width:250px;height:250px">
-  <% elsif @activity.activities == "Draw on a piece of paper!" %>
+          style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Draw happiness on a piece of paper!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/bksjdgoo.json"
+              trigger="loop"
+
+              style="width:350px;height:350px">
+
+ <% elsif @activity.description == "Ask a friend if they are okay" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
-        src="https://cdn.lordicon.com/bksjdgoo.json"
-        trigger="hover"
+        src="https://cdn.lordicon.com/kiynvdns.json"
+        trigger="loop"
+        delay="1000"
+        style="width:350px;height:350px">
 
-        style="width:250px;height:250px">
-  <% elsif @activity.activities == "Write on a piece of paper!" %>
+<!-- Angry -->
+
+  <% elsif @activity.description == "Talk to a friend you like" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
-       src="https://cdn.lordicon.com/lsrcesku.json"
-       trigger="hover"
+        src="https://cdn.lordicon.com/kiynvdns.json"
+        trigger="loop"
+        delay="1000"
+        style="width:350px;height:350px">
 
-       style="width:250px;height:250px">
+  <% elsif @activity.description == "Draw a picture of your anger" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/bksjdgoo.json"
+              trigger="loop"
+
+              style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Run outside the classrom five times" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vkycdaci.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Draw on a piece of paper!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Take 10 long breathes" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/xvhlktlr.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <!-- Neutral -->
+
+  <% elsif @activity.description == "Hug a teddy bear!" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/zxlywduw.json"
+              trigger="loop"
+              delay= "1000"
+              style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Speed walk outside the classroom!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vkycdaci.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Jog around the block!" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vkycdaci.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Draw on a piece of paper!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Write on a piece of paper!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <!-- Sad -->
+
+  <% elsif @activity.description == "Hug a teddy bear!" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/zxlywduw.json"
+              trigger="loop"
+              delay= "1000"
+              style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Talk to a friend you trust" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+     <lord-icon
+        src="https://cdn.lordicon.com/kiynvdns.json"
+        trigger="loop"
+        delay="1000"
+        style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Take 10 calm belly breathes" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/xvhlktlr.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Draw/Write sadness on a piece of paper!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Listen to music!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/wxsbvjgg.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <!-- Devastated -->
+
+  <% elsif @activity.description == "Talk with teacher" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/kiynvdns.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Chat with a friend" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/kiynvdns.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Hug a teddy bear/someone you like" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/zxlywduw.json"
+              trigger="loop"
+              delay= "1000"
+              style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Draw anything on a piece of paper" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
+            trigger="loop"
+
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Write down your feelings" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+          src="https://cdn.lordicon.com/vhyuhmbl.json"
+          trigger="loop"
+          delay="1000"
+          style="width:350px;height:350px">
+
   <% end %>
 </div>
+<div class="countdown">
+<div id="ten-countdown"></div>
+</div>
+<script>
+  function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "Time is up!";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
+
+countdown( "ten-countdown", 0, 10 );
+
+</script>

@@ -1,7 +1,9 @@
 class StudentsController < ApplicationController
 
-  # skip_before_action :authenticate_student!
 
+  # skip_before_action :authenticate_student!
+  skip_before_action :authenticate_student!
+  
   def journal
     @mood = params[:mood]
     @student_id = params[:student_id]
@@ -17,11 +19,9 @@ class StudentsController < ApplicationController
   end
 
   def activities
-
   end
 
   def show
-
   end
 
   private
@@ -29,5 +29,4 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :age, :email, :password, :classroom_id)
   end
-
 end
