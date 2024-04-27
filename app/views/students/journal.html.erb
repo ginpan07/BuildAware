@@ -5,7 +5,7 @@
   <div class="container-body">
     <div class="answers">
       <% if @mood == "happy" %>
-        <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
+        <%= link_to student_activities_path(student_id: @student_id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
             <p>Playing with my friends and having fun together.</p>
           </div>
@@ -20,7 +20,7 @@
           </div>
         <% end %>
       <% elsif @mood == "angry" %>
-        <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
+        <%= link_to student_activities_path(student_id: @student_id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
             <p>Feeling unfairly treated or not listened to.</p>
           </div>
@@ -35,7 +35,7 @@
           </div>
         <% end %>
       <% elsif @mood == "neutral" %>
-        <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
+        <%= link_to student_activities_path(student_id: @student_id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
             <p>Just woke up and haven't fully woken up yet.</p>
           </div>
@@ -50,7 +50,7 @@
           </div>
         <% end %>
       <% elsif @mood == "sad" %>
-        <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
+        <%= link_to student_activities_path(student_id: @student_id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
             <p>Missing someone I love or care about.</p>
           </div>
@@ -65,7 +65,7 @@
           </div>
         <% end %>
       <% elsif @mood == "devastated" %>
-        <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
+        <%= link_to student_activities_path(student_id: @student_id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
             <p>Feeling betrayed or abandoned by someone I trust.</p>
           </div>
