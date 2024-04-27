@@ -15,7 +15,8 @@ class StudentsController < ApplicationController
   end
 
   def activities
-
+    @mood = params[:mood]
+    @student_id = current_student
   end
 
   def show
