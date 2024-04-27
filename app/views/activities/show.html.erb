@@ -1,23 +1,25 @@
 <h1>Please do the following: <%= @activity.description %> </h1>
 
-<div class="container">
+<div class="container-icon">
 
 <!-- Happy -->
 
-  <% if @activity.description == "Hug a teddy bear!" %>
+  <% if @activity.description == "Hug your best friend!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
-
+              delay= "1000"
               style="width:350px;height:350px">
-  <% elsif @activity.description == "Speed walk outside the classroom!" %>
-     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <lord-icon
-            src="https://cdn.lordicon.com/vkycdaci.json"
-            trigger="loop"
 
-            style="width:350px;height:350px">
+  <% elsif @activity.description == "Check in with your best friend!" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+     <lord-icon
+              src="https://cdn.lordicon.com/kiynvdns.json"
+              trigger="loop"
+              delay="1000"
+              style="width:350px;height:350px">
+
   <% elsif @activity.description == "Dance with your teacher/friend!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
@@ -27,13 +29,14 @@
 
           style="width:350px;height:350px">
 
-  <% elsif @activity.description == "Draw anger on a piece of paper!" %>
+  <% elsif @activity.description == "Draw happiness on a piece of paper!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/bksjdgoo.json"
               trigger="loop"
 
               style="width:350px;height:350px">
+
  <% elsif @activity.description == "Ask a friend if they are okay" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
@@ -51,6 +54,7 @@
         trigger="loop"
         delay="1000"
         style="width:350px;height:350px">
+
   <% elsif @activity.description == "Draw a picture of your anger" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
@@ -58,6 +62,7 @@
               trigger="loop"
 
               style="width:350px;height:350px">
+
   <% elsif @activity.description == "Run outside the classrom five times" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -89,7 +94,7 @@
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
-
+              delay= "1000"
               style="width:350px;height:350px">
 
   <% elsif @activity.description == "Speed walk outside the classroom!" %>
@@ -100,14 +105,13 @@
 
             style="width:350px;height:350px">
 
-  <% elsif @activity.description == "Dance with your teacher/friend!" %>
+  <% elsif @activity.description == "Jog around the block!" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
-          <lord-icon
-             src="https://cdn.lordicon.com/lnmgxmyk.json"
-             trigger="loop"
-             delay="500"
+        <lord-icon
+            src="https://cdn.lordicon.com/vkycdaci.json"
+            trigger="loop"
 
-          style="width:350px;height:350px">
+            style="width:350px;height:350px">
 
   <% elsif @activity.description == "Draw on a piece of paper!" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
@@ -132,7 +136,7 @@
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
-
+               delay= "1000"
               style="width:350px;height:350px">
 
   <% elsif @activity.description == "Talk to a friend you trust" %>
@@ -169,46 +173,45 @@
 
   <!-- Devastated -->
 
-  <% elsif @activity.description == "Hug a teddy bear!" %>
+  <% elsif @activity.description == "Talk with teacher" %>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/kiynvdns.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Chat with a friend" %>
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+            src="https://cdn.lordicon.com/kiynvdns.json"
+            trigger="loop"
+            delay="1000"
+            style="width:350px;height:350px">
+
+  <% elsif @activity.description == "Hug a teddy bear/someone you like" %>
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
-
+               delay= "1000"
               style="width:350px;height:350px">
 
-  <% elsif @activity.description == "Speed walk outside the classroom!" %>
+  <% elsif @activity.description == "Draw anything on a piece of paper" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
-            src="https://cdn.lordicon.com/vkycdaci.json"
+            src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
             style="width:350px;height:350px">
 
-  <% elsif @activity.description == "Dance with your teacher/friend!" %>
-      <script src="https://cdn.lordicon.com/lordicon.js"></script>
-          <lord-icon
-             src="https://cdn.lordicon.com/lnmgxmyk.json"
-             trigger="loop"
-             delay="500"
-
-             style="width:350px;height:350px">
-
-  <% elsif @activity.description == "Draw anger on a piece of paper!" %>
+  <% elsif @activity.description == "Write down your feelings" %>
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
-          <lord-icon
-              src="https://cdn.lordicon.com/bksjdgoo.json"
-              trigger="loop"
-
-              style="width:350px;height:350px">
-
-  <% elsif @activity.description == "Ask a friend if they are okay" %>
-     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-     <lord-icon
-        src="https://cdn.lordicon.com/kiynvdns.json"
-        trigger="loop"
-        delay="1000"
-        style="width:350px;height:350px">
+        <lord-icon
+          src="https://cdn.lordicon.com/vhyuhmbl.json"
+          trigger="loop"
+          delay="1000"
+          style="width:350px;height:350px">
 
   <% end %>
 </div>
