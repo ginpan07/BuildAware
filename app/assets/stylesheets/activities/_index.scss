@@ -1,20 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jersey+20&display=swap');
 
+.container {
+
+}
+
+.activity-container{
+  justify-content: center;
+  align-items: center;
+}
 
 .activity-card {
-  margin: 5px;
-  padding: 5px;
   border-style: outset;
   margin-bottom: 10px;
   // font-family: "Jersey 20", sans-serif;
   // font-weight: 400;
   // font-style: normal;
-  font-size: 35px;
-  font-family: "Comic Neue", cursive;
   font-weight: 700;
   font-style: normal;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Happy Monkey", cursive;
+  font-size: 18px;
+  min-height: 100px;
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  min-width: 400px;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 6px outset #d4d081;
+  font-weight: bold;
+  background-color: #f6f193;
+  outline: 2px solid black;
 }
 
 .card-link {
@@ -25,11 +47,10 @@
 .card-link:hover {
   text-decoration: none;
   color: darkblue;
-  font-size: 33px;
+
 }
 
 .activity-card:hover {
   border-style: inset;
-  color: darkblue;
-  font-size: 33px;
+  background-color: #d4d081;
 }
