@@ -1,8 +1,7 @@
 class StudentsController < ApplicationController
-
+  before_action :authenticate_student!
 
   # skip_before_action :authenticate_student!
-  skip_before_action :authenticate_student!
 
   def journal
     @mood = params[:mood]
