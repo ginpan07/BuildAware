@@ -1,22 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jersey+20&display=swap');
 
-.container {
-
-}
-
-.activity-container{
-  justify-content: center;
-  align-items: center;
-}
-
 .activity-card {
   border-style: outset;
   margin-bottom: 10px;
-  // font-family: "Jersey 20", sans-serif;
-  // font-weight: 400;
-  // font-style: normal;
-  font-weight: 700;
   font-style: normal;
   text-align: center;
   display: flex;
@@ -24,19 +11,25 @@
   text-align: center;
   align-items: center;
   font-family: "Happy Monkey", cursive;
-  font-size: 18px;
+  font-size: 30px;
   min-height: 100px;
   margin-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
-  min-width: 400px;
-  max-width: 500px;
+  min-width: -webkit-fill-available;
+  max-width: -webkit-fill-available;
   border-radius: 10px;
   border: 6px outset #d4d081;
   font-weight: bold;
-  background-color: #f6f193;
+ // background-color: #f6f193;
   outline: 2px solid black;
+  margin-left: 150px;
+  margin-right: 150px;
+  //animation: mymove 3s infinite;
+  animation: wiggle 3s infinite; /* Apply the wiggle animation */
+  background-color: var(--bg-color, #f6f193); /* Set default background color */
+  transition: background-color 0.3s ease;
 }
 
 .card-link {
@@ -44,13 +37,38 @@
   color: black;
 }
 
-.card-link:hover {
-  text-decoration: none;
-  color: darkblue;
-
-}
-
 .activity-card:hover {
   border-style: inset;
-  background-color: #d4d081;
+  // background-color: #d4d081;
+  --bg-color: var(--random-color);
+}
+
+.activity-card:active {
+  background-color: #A5DD9B;
+  transform: translateY(4px);
+  border-color: #A5DD9B;
+}
+
+@keyframes mymove {
+  // 90% {border: 5px inset lightblue;}
+  50% {box-shadow: 5px 10px 20px rgb(117, 220, 227);}
+}
+
+
+@keyframes wiggle {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: blue;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: orange;
+  }
 }
