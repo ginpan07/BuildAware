@@ -1,73 +1,50 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <%= link_to students_moods_path, class: "navbar-brand" do %>
+      <%= image_tag "buildaware_cropped.png" %>
+    <% end %>
 
-
-      <%= link_to students_moods_path, class: "navbar-brand" do %>
-        <%= image_tag "buildaware_cropped.png" %>
-      <% end %>
-      <div class="logout-button">
-        <% if student_signed_in? %>
-          <%= link_to "Log out", destroy_student_session_path, data: {turbo_method: :delete}, class: "logout btn btn-outline-dark" %>
-        <% end %>
-      </div>
+    <% if student_signed_in? %>
+      <%= link_to "Log out", destroy_student_session_path, data: {turbo_method: :delete}, class: "logout btn btn-outline-dark" %>
+    <% elsif teacher_signed_in? %>
+      <%= link_to "Log out", destroy_teacher_session_path, data: {turbo_method: :delete}, class: "logout btn btn-outline-dark" %>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
 
-        <!-- Home link -->
-        <% if teacher_signed_in? %>
+
+        <% if !(student_signed_in? || teacher_signed_in?) %>
           <li class="nav-item">
-            <%= link_to "Moods",  students_moods_path, class: "nav-link" %>
+            <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
           </li>
         <% end %>
 
-        <!-- Logout dropdown -->
         <% if student_signed_in? || teacher_signed_in? %>
           <li class="nav-item dropdown">
-
-           <!--**missing this code for drop down, hence added in**-->
-           <% if teacher_signed_in? %>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= current_student.name %>
+            <% if teacher_signed_in? %>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
               </a>
-          <% end %>
-
-            <% if student_signed_in? %>
-              <% user = current_student %>
-            <% else %>
-              <% user = current_teacher %>
             <% end %>
-
-
+            <% user = student_signed_in? ? current_student : current_teacher %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if teacher_signed_in? %>
                 <%= link_to "Action", "#", class: "dropdown-item" %>
                 <%= link_to "Another action", "#", class: "dropdown-item" %>
               <% end %>
-              <% if student_signed_in? %>
-                <%= link_to "Log out", destroy_student_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <% else %>
-                <%= link_to "Log out", destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <% end %>
-            <!--/ul> ****wrongly placed to close off ul, hence comment out**** -->
-            </div> <!--**missing closing div, hence added one**-->
-          </li>
-        <% else %>
-          <!-- Student Login -->
-          <li class="nav-item">
-            <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
-          </li>
-
-          <!-- Teacher Login -->
-          <li class="nav-item">
-            <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+              <%= link_to "Log out", student_signed_in? ? destroy_student_session_path : destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
           </li>
         <% end %>
       </ul>
-
     </div>
   </div>
 </div>
