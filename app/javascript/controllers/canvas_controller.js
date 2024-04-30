@@ -1,10 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      var painting = false;
+  static targets = ["myCanvas"]
+    connect() {
+      let canvas = this.myCanvasTarget;
+      let ctx = canvas.getContext("2d");
+      let painting = false;
 
       canvas.addEventListener("mousedown", startPosition);
       canvas.addEventListener("mouseup", endPosition);
@@ -56,8 +57,8 @@ export default class extends Controller {
           canvas.height = newHeight;
 
           // Restore the drawing with scaling
-          ctx.putImageData(imageData, 0, 0);
-          ctx.scale(newWidth / initialWidth, newHeight / initialHeight);
+          // ctx.putImageData(imageData, 0, 0);
+          // ctx.scale(newWidth / initialWidth, newHeight / initialHeight);
       }
 
       // Example of resizing the canvas (you can trigger this as needed)
