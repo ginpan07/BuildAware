@@ -5,6 +5,7 @@
 
 .navbar .container-fluid {
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,9 +14,36 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 500px;
+
 }
 
 .navbar {
   --bs-navbar-padding-y: 0;
   background-color: #c5ebaa;
+  justify-content: center;
+
+}
+
+.logout {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  position: fixed
+}
+
+.logout:hover {background-color: #3e8e41}
+
+.logout:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
