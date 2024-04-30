@@ -21,12 +21,12 @@
             <p>I'm feeling creative.</p>
           </div>
         <% end %>
-          <div class="answer">
-            <form action="/submit-form" method="post">
+          <div class="answer answer-input">
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
               <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer"><br>
+              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
               <input type="submit" value="Submit">
-            </form>
+            <% end %>
           </div>
       <% elsif @mood == "angry" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
@@ -43,6 +43,13 @@
             <p>Not getting what I want or feeling frustrated.</p>
           </div>
         <% end %>
+          <div class="answer answer-input">
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+              <label for="custom_answer">Enter your own answer:</label><br>
+              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <input type="submit" value="Submit">
+            <% end %>
+          </div>
       <% elsif @mood == "neutral" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -58,6 +65,13 @@
             <p>I'm in a comfortable environment where I feel safe and content.</p>
           </div>
         <% end %>
+          <div class="answer answer-input">
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+              <label for="custom_answer">Enter your own answer:</label><br>
+              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <input type="submit" value="Submit">
+            <% end %>
+          </div>
       <% elsif @mood == "sad" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -73,6 +87,13 @@
             <p>Facing a difficult situation or change in my life.</p>
           </div>
         <% end %>
+          <div class="answer answer-input">
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+              <label for="custom_answer">Enter your own answer:</label><br>
+              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <input type="submit" value="Submit">
+            <% end %>
+          </div>
       <% elsif @mood == "devastated" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -88,12 +109,19 @@
             <p>Witnessing something traumatic or upsetting.</p>
           </div>
         <% end %>
+          <div class="answer answer-input">
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+              <label for="custom_answer">Enter your own answer:</label><br>
+              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <input type="submit" value="Submit">
+            <% end %>
+          </div>
       <% end %>
     </div>
 
     <div id="canvas-container">
       <h4>Draw here</h4>
-      <canvas class="canvas" data-canvas-target="myCanvas">
+      <canvas class="canvas" data-canvas-target="myCanvas" width="600" height="400">
       </canvas>
     </div>
     </div>
