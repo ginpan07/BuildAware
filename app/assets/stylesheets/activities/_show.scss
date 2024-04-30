@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
 .container-lord {
   display: flex;
   justify-content: center;
@@ -34,7 +36,7 @@ body {
   text-decoration: none;
 }
 
-.countdown {
+.ten-countdown {
   background-color: #f2c18d;
   border-radius: 20px;
   border: 10px solid #f6f193;
@@ -49,3 +51,58 @@ body {
 .container-icon {
   background-color: none;
 }
+
+body {
+  background-color: black;
+}
+
+.container-count {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#countdown {
+  width: 300px;
+  height: 300px;
+  font-family: "Archivo Black", cursive;
+  font-size: 7rem;
+  font-weight: bold;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  border: 5px solid blue;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+// #ten-countdown {
+//   font-family: sans-serif;
+//   width: 200px;
+//   height: 100px;
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   margin-left: -100px;
+//   margin-top: -50px;
+//   color: white;
+//   font-size: 5em;
+//   text-align: center;
+//   font-weight: bold;
+//   font-style: italic;
+//   opacity: 1; /* Corrected line */
+//   transition: opacity 0.4s ease; /* Use standard CSS for transition */
+//   -webkit-perspective: 1000;
+//   -webkit-backface-visibility: hidden;
+// }
+
+// #ten-countdown.puffer {
+//   opacity: 0;
+//   transform: scale(1.6, 1.6);
+//   transition: all 0.4s ease-out;
+// }
