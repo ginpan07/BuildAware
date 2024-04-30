@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :students
   root to: "pages#home"
 
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -23,5 +22,5 @@ Rails.application.routes.draw do
   get 'teacher-classroom/:id/mood_summary', to: 'teachers#mood_summary', as: 'mood_summary_teacher_classroom'
 
   get 'teacher-main-page', to: 'teachers#main_page', as: 'teacher_main_page'
-  
+
 end
