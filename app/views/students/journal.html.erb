@@ -21,6 +21,13 @@
             <p>I'm feeling creative.</p>
           </div>
         <% end %>
+          <div class="answer">
+            <form action="/submit-form" method="post">
+              <label for="custom_answer">Enter your own answer:</label><br>
+              <input type="text" id="custom_answer" name="custom_answer"><br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
       <% elsif @mood == "angry" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -86,7 +93,7 @@
 
     <div id="canvas-container">
       <h4>Draw here</h4>
-      <canvas class="canvas" id="myCanvas">
+      <canvas class="canvas" data-canvas-target="myCanvas">
       </canvas>
     </div>
     </div>
