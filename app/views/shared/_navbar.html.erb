@@ -18,6 +18,12 @@
         <!-- Logout dropdown -->
         <% if student_signed_in? || teacher_signed_in? %>
           <li class="nav-item dropdown">
+
+           <!--**missing this code for drop down, hence added in**-->
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+
             <% if student_signed_in? %>
               <% user = current_student %>
             <% else %>
@@ -32,7 +38,8 @@
               <% else %>
                 <%= link_to "Log out", destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <% end %>
-            </ul>
+            <!--/ul> ****wrongly placed to close off ul, hence comment out**** -->
+            </div> <!--**missing closing div, hence added one**-->
           </li>
         <% else %>
           <!-- Student Login -->
@@ -46,6 +53,7 @@
           </li>
         <% end %>
       </ul>
+
     </div>
   </div>
 </div>
