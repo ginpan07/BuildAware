@@ -48,20 +48,20 @@ export default class extends Controller {
           ctx.moveTo(x, y);
       }
       // Function to resize the canvas
-      function resizeCanvas(newWidth, newHeight) {
-          // Save the drawing
-          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      // function resizeCanvas(newWidth, newHeight) {
+      //     // Save the drawing
+      //     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-          // Resize the canvas
-          canvas.width = newWidth;
-          canvas.height = newHeight;
+      //     // Resize the canvas
+      //     canvas.width = newWidth;
+      //     canvas.height = newHeight;
 
-          // Restore the drawing with scaling
-          // ctx.putImageData(imageData, 0, 0);
-          // ctx.scale(newWidth / initialWidth, newHeight / initialHeight);
-      }
+      //     // Restore the drawing with scaling
+      //     // ctx.putImageData(imageData, 0, 0);
+      //     // ctx.scale(newWidth / initialWidth, newHeight / initialHeight);
+      // }
 
-      // Example of resizing the canvas (you can trigger this as needed)
-      resizeCanvas(600, 400);
+      // // Example of resizing the canvas (you can trigger this as needed)
+      // resizeCanvas(600, 400);
   }
 }
