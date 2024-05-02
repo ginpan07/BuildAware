@@ -1,7 +1,7 @@
 // Import and register all your controllers from the importmap under controllers/*
 
 import { application } from "controllers/application"
-import CanvasController from "./canvas_controller"
+import CanvasController from "controllers/canvas_controller"
 application.register("canvas", CanvasController)
 
 // Eager load all controllers defined in the import map under controllers/**/*_controller
