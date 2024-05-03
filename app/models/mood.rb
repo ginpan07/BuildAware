@@ -1,3 +1,4 @@
 class Mood < ApplicationRecord
-  belongs_to :student
+  has_many :students, through: :student_moods
+  has_many :student_moods
 end

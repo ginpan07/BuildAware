@@ -5,9 +5,9 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :classroom
 
-  has_many :moods
-
   has_many :student_activities
   has_many :activities, through: :student_activities
 
+  has_many :student_moods
+  has_many :moods, through: :student_moods
 end

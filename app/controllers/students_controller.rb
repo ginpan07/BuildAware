@@ -5,9 +5,16 @@ class StudentsController < ApplicationController
 
   def journal
     @mood = params[:mood]
+    @moods = Mood.find_by(mood: @mood)
     @student_id = params[:student_id]
     @student = current_student
     #current_student.moods.create(mood: params[:mood])
+
+    if @student.present? && @moods.present?
+      @student.student_moods.create(student_id: @student.id, mood_id: @moods.id)
+    else
+      render "journal" # Render the journal page again if student or mood is missing
+    end
   end
 
   def moods
