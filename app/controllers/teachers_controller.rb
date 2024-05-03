@@ -5,14 +5,16 @@ class TeachersController < ApplicationController
         @teacher = current_teacher
         @classrooms = @teacher.classrooms
     end
-    
+
     def mood_summary
         @classroom = Classroom.find(params[:id])
         @students = @classroom.students
         @mood_summary = calculate_mood_summary(@students)
     end
 
-    def classroom_details
+    def classroom_detail
+      # @classroom = Classroom.find(params[:id])
+      # @student_activity = StudentActivity.student.where(classroom_id: @classroom.id)
 
     end
 
