@@ -1,9 +1,18 @@
+
+
 <h1>Please do the following: <%= @activity.description %> </h1>
 
 <div class="container-icon">
+
+<div class="container-pop">
+<div class="popup" id="popup">
+<br>
+    <h2>Are you feeling better?</h2>
+    <button class=btn onclick="closePopup()">Yes</button>
+    <button class=btn onclick="closePopup()">No</button>
+</div>
+</div>
 <div class="container-count">
-
-
 <!--<div id="popup">
     <button type="submit" class="btn" onclick="openPopup()">Yes</button>
     <button type="submit" class="btn" onclick="openPopup()">No</button>
@@ -12,15 +21,10 @@
 
     </div>
   </div> -->
-<div id="popup">
-    <h2>Are you feeling better?</h2>
-    <button class=btn onclick="Yes()">Yes</button>
-    <button class=btn onclick="No()">No</button>
-</div>
+
+
+
 <div id="countdown">30</div>
-
-</div>
-
 <!-- Happy -->
 
   <% if @activity.description == "Hug your best friend!" %>
@@ -234,6 +238,7 @@
 
   <% end %>
 </div>
+</div>
 
 <script>
     function countdown(elementName, seconds) {
@@ -244,32 +249,29 @@
         }
 
         function updateTimer() {
-            var msLeft = endTime - (+new Date);
-            if (msLeft < 0) {
-                displayPopup(); // Call the displayPopup function when the timer reaches 0
-            } else {
-                timeLeft = new Date(msLeft);
-                var secs = Math.floor((msLeft / 1000) % 60); // Calculate remaining seconds
-                element.innerHTML = twoDigits(secs);
-                setTimeout(updateTimer, 1000); // Update every second
-            }
-        }
+    var msLeft = endTime - (+new Date);
+    if (msLeft < 0 || popup.style.display === 'block') {
+        closePopup();
+    } else {
+        timeLeft = new Date(msLeft);
+        var secs = Math.floor((msLeft / 1000) % 60);
+        element.innerHTML = twoDigits(secs);
+        setTimeout(updateTimer, 1000);
+    }
+}
 
         element = document.getElementById(elementName);
         endTime = (+new Date) + 1000 * seconds;
         updateTimer();
     }
+    let popup = document.getElementById("popup");
 
     function displayPopup() {
         document.getElementById('popup').style.display = 'block';
     }
 
-     function Yes() {
-      alert("Thank You! Come back later for a Check-In!");
-    }
-
-    function No() {
-      alert("Thank You! Come back later for a Check-In!");
+    function closePopup() {
+      popup.classList.add("close-popup");
     }
 
     countdown("countdown", 5); // Change the countdown time as needed
