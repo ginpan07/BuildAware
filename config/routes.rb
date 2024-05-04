@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :activities
   end
 
+  get 'classrooms/:id/mood_summary', to: 'classrooms#mood_summary', as: 'classroom_mood_summary'
+
   get 'teacher-classroom/:id/mood_summary', to: 'teachers#mood_summary', as: 'mood_summary_teacher_classroom'
 
   get 'teacher-main-page', to: 'teachers#main_page', as: 'teacher_main_page'
