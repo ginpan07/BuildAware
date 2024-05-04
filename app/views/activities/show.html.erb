@@ -8,9 +8,13 @@
 <div class="popup" id="popup">
 <br>
     <h2>Are you feeling better?</h2>
-    <button class=btn onclick="closePopup()">Yes</button>
-    <button class=btn onclick="closePopup()">No</button>
+    <button class=btn onclick="closePopup(true)">Yes</button>
+    <button class=btn onclick="closePopup(true)">No</button>
 </div>
+<div class="popup" id="newPopup" style="display :none;">
+            <h2>Thank You! Come back later for your check-in! </h2>
+            <button class="btn" onclick="closeNewPopup()">Close</button>
+        </div>
 </div>
 <div class="container-count">
 <!--<div id="popup">
@@ -249,34 +253,42 @@
         }
 
         function updateTimer() {
-    var msLeft = endTime - (+new Date);
-    if (msLeft < 0 || popup.style.display === 'block') {
-        closePopup();
-    } else {
-        timeLeft = new Date(msLeft);
-        var secs = Math.floor((msLeft / 1000) % 60);
-        element.innerHTML = twoDigits(secs);
-        setTimeout(updateTimer, 1000);
-    }
-}
+            var msLeft = endTime - (+new Date);
+            if (msLeft < 0 || document.getElementById('popup').style.display === 'block') {
+                closePopup();
+            } else {
+                timeLeft = new Date(msLeft);
+                var secs = Math.floor((msLeft / 1000) % 60);
+                element.innerHTML = twoDigits(secs);
+                setTimeout(updateTimer, 1000);
+            }
+        }
 
         element = document.getElementById(elementName);
         endTime = (+new Date) + 1000 * seconds;
         updateTimer();
     }
+
     let popup = document.getElementById("popup");
 
     function displayPopup() {
         document.getElementById('popup').style.display = 'block';
     }
 
-    function closePopup() {
-      popup.classList.add("close-popup");
+    function closePopup(feelingBetter) {
+    popup.classList.add("close-popup");
+    if (feelingBetter) {
+        document.getElementById('newPopup').style.display = 'block';
+        document.getElementById('newPopup').classList.add("closeNew-popup");
+    }
+}
+
+    function closeNewPopup() {
+        document.getElementById('newPopup').style.display = 'none'; // Hide the new popup
     }
 
-    countdown("countdown", 5); // Change the countdown time as needed
+    countdown("countdown", 5); // Change the coun
 </script>
-
 
 <!--<script>
   function countdown(elementName, seconds) {

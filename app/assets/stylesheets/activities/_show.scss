@@ -146,13 +146,15 @@ body {
   z-index: 999;
 }
 
-.close-popup {
+.close-popup,
+.closeNew-popup {
   visibility: visible;
   top: 72%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 999;
   padding-top: 150px;
 }
+
 // #ten-countdown {
 //   font-family: sans-serif;
 //   width: 200px;
