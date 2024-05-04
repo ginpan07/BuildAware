@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   get 'teacher-classroom/:id/mood_summary', to: 'teachers#mood_summary', as: 'mood_summary_teacher_classroom'
 
   get 'teacher-main-page', to: 'teachers#main_page', as: 'teacher_main_page'
-
+  get 'teacher-classroom/:id/classroom_detail', to: 'teachers#classroom_detail', as: 'teacher_classroom'
 end

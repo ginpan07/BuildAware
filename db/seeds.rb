@@ -41,25 +41,34 @@ classroom = Classroom.create!(
   end
 end
 
-# Create moods for each student
-Student.all.each do |student|
-  # Generate a random mood for each student
-  mood = ["Happy", "Angry", "Neutral", "Sad", "Devastated"].sample
-  # Create the mood record for the student
-  student.moods.create!(mood: mood)
-end
+happy = Mood.new(mood: "happy")
+happy.save
+angry = Mood.new(mood: "angry")
+angry.save
+neutral = Mood.new(mood: "neutral")
+neutral.save
+sad = Mood.new(mood: "sad")
+sad.save
+devastated = Mood.new(mood: "devastated")
+devastated.save
+
+StudentMood.create(student_id: 1, mood_id: 1)
+StudentMood.create(student_id: 2, mood_id: 2)
+StudentMood.create(student_id: 3, mood_id: 3)
+StudentMood.create(student_id: 4, mood_id: 4)
+StudentMood.create(student_id: 5, mood_id: 5)
 
 # Happy - done
-Activity.create(description: "Hug your best friend!", mood: "Happy")
-Activity.create(description: "Check in with your best friend!", mood: "Happy")
-Activity.create(description: "Dance with your teacher/friend!", mood: "Happy")
-Activity.create(description: "Draw happiness on a piece of paper!", mood: "Happy")
-Activity.create(description: "Ask a friend if they are okay", mood: "Happy")
+Activity.create(description: "Hug your best friend!", mood: happy)
+Activity.create(description: "Check in with your best friend!", mood: happy)
+Activity.create(description: "Dance with your teacher/friend!", mood: happy)
+Activity.create(description: "Draw happiness on a piece of paper!", mood: happy)
+Activity.create(description: "Ask a friend if they are okay", mood: happy)
 
 # Angry - done
-Activity.create(description: "Talk to a friend you like", mood: "Angry")
-Activity.create(description: "Draw a picture of your anger", mood: "Angry")
-Activity.create(description: "Run outside the classrom five times", mood: "Angry")
+Activity.create(description: "Talk to a friend you like", mood: angry)
+Activity.create(description: "Draw a picture of your anger", mood: angry)
+Activity.create(description: "Run outside the classrom five times", mood: angry)
 Activity.create(description: "Draw on a piece of paper!", mood: "Angry")
 Activity.create(description: "Take 10 long breathes", mood: "Angry")
 
