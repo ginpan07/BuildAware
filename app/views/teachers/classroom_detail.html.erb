@@ -19,8 +19,8 @@
           <% end %>
         </td>
         <td>
-          <% student.activities.last(2).each do |activity| %>
-            <p><%= activity.description %></p>
+          <% student.student_activities.last(2).each do |activity| %>
+            <p><%= activity.activity.description %></p>
           <% end %>
         </td>
         <td>
