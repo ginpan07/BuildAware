@@ -20,7 +20,10 @@ h1 {
   width: 90%;
   border-radius: 20px;
   border: 10px outset #f6f193;
-  padding: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0;
   outline: 2px solid black;
   box-shadow: 0 0 0 1px black inset;
 }

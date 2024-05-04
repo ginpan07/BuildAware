@@ -3,6 +3,9 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["myCanvas"];
 
+  // Add a variable to store the selected color
+  selectedColor = "#000"; // Default color is black
+
   connect() {
     const canvas = this.myCanvasTarget;
     const ctx = canvas.getContext("2d");
@@ -27,8 +30,8 @@ export default class extends Controller {
     clearButton.style.fontWeight = "bold";
     clearButton.style.width = "200px";
     clearButton.style.height = "60px";
-    clearButton.style.bottom = "150px";
-    clearButton.style.left = "300px";
+    clearButton.style.bottom = "110px";
+    clearButton.style.left = "350px";
     clearButton.style.padding = "10px";
     clearButton.style.backgroundColor = "#f6f193";
     clearButton.style.border = "6px outset #d4d081";
@@ -52,6 +55,27 @@ export default class extends Controller {
     clearButton.addEventListener("click", clearCanvas);
     this.element.appendChild(clearButton);
 
+    // Button to select color
+    const colorButton = document.createElement("input");
+    colorButton.type = "color";
+    colorButton.value = "#000"; // Default color is black
+    colorButton.style.position = "relative";
+    colorButton.style.bottom = "170px";
+    colorButton.style.left = "150px";
+    colorButton.style.width = "200px";
+    colorButton.style.height = "60px";
+    colorButton.style.border = "6px outset #d4d081";
+    colorButton.style.borderRadius = "10px";
+    colorButton.style.outline = "2px solid black";
+    colorButton.style.boxShadow = "0 0 0 1px black inset";
+    colorButton.addEventListener("change", (e) => {
+      this.selectedColor = e.target.value;
+    });
+    this.element.appendChild(colorButton);
+
+    // Capture the controller instance
+    const controller = this;
+
     function startPosition(e) {
       painting = true;
       draw(e);
@@ -66,7 +90,9 @@ export default class extends Controller {
       if (!painting) return;
       ctx.lineWidth = 5;
       ctx.lineCap = "round";
-      ctx.strokeStyle = "#000";
+
+      // Use the selected color from the controller instance
+      ctx.strokeStyle = controller.selectedColor;
 
       // Get touch or mouse coordinates
       let x, y;
