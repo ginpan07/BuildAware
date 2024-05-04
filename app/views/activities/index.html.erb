@@ -1,16 +1,17 @@
 <h1>Please choose an activity</h1>
 
+
+<div class="activity-container">
   <div class="container">
     <% @activities.each do |activity| %>
-    <% if @mood.capitalize == activity.mood %>
-          <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do%>
-            <div class="activity-card">
-              <p><%= activity.description %></p>
-            </div>
-          <% end %>
+    <% if @mood == activity.mood %>
+      <div class="activity-card">
+          <%= link_to activity.description, student_activity_path(current_student.id, activity.id), class: "card-link"%>
+        </div>
     <% end %>
     <% end %>
   </div>
+</div>
 
   <script>
     const activities = document.querySelectorAll('.activity-card');

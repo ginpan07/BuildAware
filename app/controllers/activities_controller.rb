@@ -1,12 +1,11 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_student!
 
-  def create
-  end
   def index
     @activities = Activity.all
     @mood = params[:mood]
     @stu_activity = StudentActivity.all
+
   end
 
   def show
