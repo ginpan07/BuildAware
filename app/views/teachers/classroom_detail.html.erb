@@ -14,16 +14,17 @@
         <td><%= student.name %></td>
         <td><%= student.age %></td>
         <td>
-          <% student.moods.each do |mood| %>
-            <p><%= mood.mood %></p>
+          <% student.student_moods.last(2).each do |mood| %>
+            <p><%= mood.mood.mood %></p>
           <% end %>
         </td>
         <td>
-          <% student.activities.each do |activity| %>
-            <p><%= activity.description %></p>
+          <% student.student_activities.last(2).each do |activity| %>
+            <p><%= activity.activity.description %></p>
           <% end %>
-        </td>   <td>
-          <% student.student_moods.each do |student_mood| %>
+        </td>
+        <td>
+          <% student.student_moods.last(2).each do |student_mood| %>
             <p><%= student_mood.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
           <% end %>
         </td>
