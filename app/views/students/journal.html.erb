@@ -25,6 +25,7 @@
             <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
               <label for="custom_answer">Enter your own answer:</label><br>
               <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <%= hidden_field_tag 'mood', @mood %>
               <input type="submit" value="Submit">
             <% end %>
           </div>
@@ -44,9 +45,10 @@
           </div>
         <% end %>
           <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
               <label for="custom_answer">Enter your own answer:</label><br>
               <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <%= hidden_field_tag 'mood', @mood %>
               <input type="submit" value="Submit">
             <% end %>
           </div>
@@ -66,9 +68,10 @@
           </div>
         <% end %>
           <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
               <label for="custom_answer">Enter your own answer:</label><br>
               <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <%= hidden_field_tag 'mood', @mood %>
               <input type="submit" value="Submit">
             <% end %>
           </div>
@@ -88,9 +91,10 @@
           </div>
         <% end %>
           <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
               <label for="custom_answer">Enter your own answer:</label><br>
               <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <%= hidden_field_tag 'mood', @mood %>
               <input type="submit" value="Submit">
             <% end %>
           </div>
@@ -110,9 +114,10 @@
           </div>
         <% end %>
           <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :POST do %>
+            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
               <label for="custom_answer">Enter your own answer:</label><br>
               <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
+              <%= hidden_field_tag 'mood', @mood %>
               <input type="submit" value="Submit">
             <% end %>
           </div>
