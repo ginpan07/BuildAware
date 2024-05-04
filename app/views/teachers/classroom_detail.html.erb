@@ -6,8 +6,9 @@
       <th>Name</th>
       <th>Age</th>
       <th>Moods</th>
+      <th>Moods Created At</th>
       <th>Activities</th>
-      <th>Created at</th>
+      <th>Activities Created at</th>
     </tr>
     <% @students.each do |student| %>
     <tr>
@@ -19,15 +20,21 @@
           <% end %>
         </td>
         <td>
+          <% student.student_moods.last(2).each do |student_mood| %>
+            <p><%= student_mood.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+          <% end %>
+        </td>
+        <td>
           <% student.student_activities.last(2).each do |activity| %>
             <p><%= activity.activity.description %></p>
           <% end %>
         </td>
         <td>
-          <% student.student_moods.last(2).each do |student_mood| %>
-            <p><%= student_mood.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+          <% student.student_activities.last(2).each do |student_activity| %>
+            <p><%= student_activity.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></p>
           <% end %>
         </td>
+
       <% end %>
     </tr>
   </table>
