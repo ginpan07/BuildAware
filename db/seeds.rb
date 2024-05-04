@@ -41,6 +41,14 @@ classroom = Classroom.create!(
   end
 end
 
+# Create moods for each student
+Student.all.each do |student|
+  # Generate a random mood for each student
+  mood = ["Happy", "Angry", "Neutral", "Sad", "Devastated"].sample
+  # Create the mood record for the student
+  student.moods.create!(mood: mood)
+end
+
 # Happy - done
 Activity.create(description: "Hug your best friend!", moods: "Happy")
 Activity.create(description: "Check in with your best friend!", moods: "Happy")
