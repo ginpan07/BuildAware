@@ -1,0 +1,33 @@
+<h1>Classroom Detail</h1>
+
+<div class="classroom d-flex justify-content-center">
+  <table class="table table-bordered w-75 mt-5">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Moods</th>
+      <th>Activities</th>
+      <th>Created at</th>
+    </tr>
+    <% @students.each do |student| %>
+    <tr>
+        <td><%= student.name %></td>
+        <td><%= student.age %></td>
+        <td>
+          <% student.moods.each do |mood| %>
+            <p><%= mood.mood %></p>
+          <% end %>
+        </td>
+        <td>
+          <% student.activities.each do |activity| %>
+            <p><%= activity.description %></p>
+          <% end %>
+        </td>   <td>
+          <% student.student_moods.each do |student_mood| %>
+            <p><%= student_mood.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
