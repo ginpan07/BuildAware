@@ -20,7 +20,6 @@ class StudentsController < ApplicationController
     else
       render "journal" # Render the journal page again if student or mood is missing
     end
-    raise
 
   end
 
