@@ -4,7 +4,7 @@
 <div class="activity-container">
   <div class="container">
     <% @activities.each do |activity| %>
-    <% if @mood.capitalize == activity.mood %>
+    <% if @mood == activity.mood %>
           <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do%>
             <div class="activity-card">
               <p><%= activity.description %></p>

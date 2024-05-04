@@ -14,8 +14,8 @@
         <td><%= student.name %></td>
         <td><%= student.age %></td>
         <td>
-          <% student.moods.each do |mood| %>
-            <p><%= mood.mood %></p>
+          <% student.student_moods.each do |mood| %>
+            <p><%= mood.mood.mood %></p>
           <% end %>
         </td>
         <td>

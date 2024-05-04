@@ -15,11 +15,12 @@ class StudentsController < ApplicationController
       if check_student_mood.nil?
         @student.student_moods.create(student_id: @student.id, mood_id: @moods.id)
       else
-        check_student_mood.update(mood_id: @moods.id)
+        @student.student_moods.last.update(mood_id: @moods.id)
       end
     else
       render "journal" # Render the journal page again if student or mood is missing
     end
+    raise
 
   end
 
