@@ -30,8 +30,6 @@ class ActivitiesController < ApplicationController
     else
       render "show" # Render the journal page again if student or mood is missing
     end
-
-raise
   end
 
 
