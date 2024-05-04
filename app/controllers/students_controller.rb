@@ -13,7 +13,12 @@ class StudentsController < ApplicationController
     if @student.present? && @moods.present?
       check_student_mood = @student.student_moods.find_by(mood_id: @moods.id)
       if check_student_mood.nil?
-        @student.student_moods.create(student_id: @student.id, mood_id: @moods.id)
+        @new_mood = @student.student_moods.new(student_id: @student.id, mood_id: @moods.id)
+        if @new_mood.save
+
+        else
+          render :journal
+        end
       else
         @student.student_moods.last.update(mood_id: @moods.id)
       end
@@ -28,6 +33,7 @@ class StudentsController < ApplicationController
     if @student.nil?
       render "moods"
     end
+
   end
 
   def activities
