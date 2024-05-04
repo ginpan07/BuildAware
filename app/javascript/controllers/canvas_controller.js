@@ -1,67 +1,91 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["myCanvas"]
-    connect() {
-      let canvas = this.myCanvasTarget;
-      let ctx = canvas.getContext("2d");
-      let painting = false;
+  static targets = ["myCanvas"];
 
-      canvas.addEventListener("mousedown", startPosition);
-      canvas.addEventListener("mouseup", endPosition);
-      canvas.addEventListener("mousemove", draw);
+  connect() {
+    const canvas = this.myCanvasTarget;
+    const ctx = canvas.getContext("2d");
+    let painting = false;
 
-      // Touch events
-      canvas.addEventListener("touchstart", startPosition);
-      canvas.addEventListener("touchend", endPosition);
-      canvas.addEventListener("touchmove", draw);
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
 
-      function startPosition(e) {
-          painting = true;
-          draw(e);
+    // Touch events
+    canvas.addEventListener("touchstart", startPosition);
+    canvas.addEventListener("touchend", endPosition);
+    canvas.addEventListener("touchmove", draw);
+
+    // Button to clear canvas
+    const clearButton = document.createElement("button");
+    clearButton.textContent = "Clear Canvas";
+    clearButton.classList.add("clear-canvas-button");
+    clearButton.style.position = "relative";
+    clearButton.style.fontFamily = "Happy Monkey, cursive";
+    clearButton.style.fontSize = "18px";
+    clearButton.style.fontWeight = "bold";
+    clearButton.style.width = "200px";
+    clearButton.style.height = "60px";
+    clearButton.style.bottom = "150px";
+    clearButton.style.left = "300px";
+    clearButton.style.padding = "10px";
+    clearButton.style.backgroundColor = "#f6f193";
+    clearButton.style.border = "6px outset #d4d081";
+    clearButton.style.borderRadius = "10px";
+    clearButton.style.outline = "2px solid black";
+    clearButton.style.boxShadow = "0 0 0 1px black inset";
+
+    clearButton.addEventListener("mouseenter", function() {
+      clearButton.style.backgroundColor = "#d4d081";
+      clearButton.style.borderStyle = "inset";
+    });
+
+    clearButton.addEventListener("mouseleave", function() {
+      clearButton.style.backgroundColor = "#f6f193";
+      clearButton.style.border = "6px outset #d4d081";
+      clearButton.style.borderRadius = "10px";
+      clearButton.style.outline = "2px solid black";
+      clearButton.style.boxShadow = "0 0 0 1px black inset";
+    });
+
+    clearButton.addEventListener("click", clearCanvas);
+    this.element.appendChild(clearButton);
+
+    function startPosition(e) {
+      painting = true;
+      draw(e);
+    }
+
+    function endPosition() {
+      painting = false;
+      ctx.beginPath();
+    }
+
+    function draw(e) {
+      if (!painting) return;
+      ctx.lineWidth = 5;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = "#000";
+
+      // Get touch or mouse coordinates
+      let x, y;
+      if (e.type.startsWith("touch")) {
+        x = e.touches[0].clientX - canvas.offsetLeft;
+        y = e.touches[0].clientY - canvas.offsetTop;
+      } else {
+        x = e.clientX - canvas.offsetLeft;
+        y = e.clientY - canvas.offsetTop;
       }
 
-      function endPosition() {
-          painting = false;
-          ctx.beginPath();
-      }
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    }
 
-      function draw(e) {
-          if (!painting) return;
-          ctx.lineWidth = 5;
-          ctx.lineCap = "round";
-          ctx.strokeStyle = "#000";
-
-          // Get touch or mouse coordinates
-          var x, y;
-          if (e.type.startsWith("touch")) {
-              x = e.touches[0].clientX - canvas.offsetLeft;
-              y = e.touches[0].clientY - canvas.offsetTop;
-          } else {
-              x = e.clientX - canvas.offsetLeft;
-              y = e.clientY - canvas.offsetTop;
-          }
-
-          ctx.lineTo(x, y);
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(x, y);
-      }
-      // Function to resize the canvas
-      // function resizeCanvas(newWidth, newHeight) {
-      //     // Save the drawing
-      //     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-      //     // Resize the canvas
-      //     canvas.width = newWidth;
-      //     canvas.height = newHeight;
-
-      //     // Restore the drawing with scaling
-      //     // ctx.putImageData(imageData, 0, 0);
-      //     // ctx.scale(newWidth / initialWidth, newHeight / initialHeight);
-      // }
-
-      // // Example of resizing the canvas (you can trigger this as needed)
-      // resizeCanvas(600, 400);
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
   }
 }
