@@ -4,12 +4,12 @@
 <div class="activity-container">
   <div class="container">
     <% @activities.each do |activity| %>
-    <% if @mood == activity.mood %>
+
           <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do%>
             <div class="activity-card">
               <p><%= activity.description %></p>
             </div>
-          <% end %>
+
     <% end %>
     <% end %>
   </div>
@@ -18,7 +18,7 @@
   <script>
     const activities = document.querySelectorAll('.activity-card');
 
-    // Function to generate random color
+    // Function to g@enerate random color
     function getRandomColor() {
       return '#' + Math.floor(Math.random()*16777215).toString(16);
     }

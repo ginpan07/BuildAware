@@ -2,22 +2,17 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_student!
 
   def index
-    @activities = Activity.all
-    @mood = params[:mood]
-    @stu_activity = StudentActivity.all
-
+    @activities = Activity.where(mood: params[:mood])
   end
 
   def show
     #@stu_activity = StudentActivity.find(params[:id])
     # if @stu_activity.present?
     #   @activity = @stu_activity.activity
-    # end
+    # end#
 
     @activity = Activity.find(params[:id])
-    @student_id = params[:student_id]
     @student = current_student
-    #current_student.moods.create(mood: params[:mood])
 
     if @student.present? && @activity.present?
       check_student_activity = @student.student_activities.find_by(activity_id: @activity.id)
