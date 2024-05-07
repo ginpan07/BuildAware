@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Permanent+Marker&display=swap");
 @import url("https://fonts.google.com/specimen/Happy+Monkey?query=happy");
 
-body {
-  background-color: #c5ebaa;
-}
+
 
 h1 {
   color: #f2c18d;
@@ -16,8 +14,8 @@ h1 {
 }
 
 .container {
+  justify-content: center;
   background-color: #f2c18d;
-  width: 90%;
   border-radius: 20px;
   border: 10px outset #f6f193;
   padding-top: 30px;
@@ -26,6 +24,8 @@ h1 {
   padding-bottom: 0;
   outline: 2px solid black;
   box-shadow: 0 0 0 1px black inset;
+  margin: 0;
+  min-width: 100%;
 }
 
 .container h4 {
@@ -40,12 +40,13 @@ h1 {
 
 .container-body {
   display: flex;
+  flex-wrap: wrap; /* allow items to wrap */
   justify-content: space-between;
 }
 
-.journal-form {
-  width: 450px;
-}
+// .journal-form {
+//   width: 100%; /* take full width on smaller screens */
+// }
 
 .answer {
   display: flex;
@@ -56,12 +57,8 @@ h1 {
   font-size: 18px;
   min-height: 100px;
   margin-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  // min-width: 400px;
-  // max-width: 500px;
-  max-width: 30%;
+  padding: 5px 10px; /* simplified padding */
+  width: 100%; /* take full width on smaller screens */
   border-radius: 10px;
   border: 6px outset #d4d081;
   font-weight: bold;
@@ -82,7 +79,12 @@ h1 {
 }
 
 .answers {
-  margin-left: 20px;
+  max-width: 30%;
+  margin-top: 20px; /* added margin top for spacing */
+}
+
+.canvas-container {
+  max-width: 40%;
 }
 
 .canvas {
@@ -93,9 +95,35 @@ h1 {
   margin-right: 20px;
   outline: 2px solid black;
   cursor: crosshair;
+  max-width: 100%;
+  height: auto;
 }
 
 .no-style {
   text-decoration: none;
   color: inherit;
 }
+
+body {
+  background-color: #c5ebaa;
+}
+
+// /* Media Query for smaller devices */
+// @media (max-width: 768px) {
+//   .container {
+//     width: 100%; /* Adjust width for smaller screens */
+//     padding: 20px; /* Adjust padding for smaller screens */
+//   }
+
+//   h1 {
+//     font-size: 40px; /* Adjust font size for smaller screens */
+//   }
+
+//   .answer {
+//     font-size: 16px; /* Adjust font size for smaller screens */
+//   }
+
+//   .canvas {
+//     margin-right: 0; /* Remove right margin for smaller screens */
+//   }
+// }
