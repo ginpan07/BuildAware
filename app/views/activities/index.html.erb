@@ -23,6 +23,20 @@
   </div>
 </div>
 
+<!--
+<div class="activity-container">
+  <div class="container">
+    <% @activities.each do |activity| %>
+      <div class="activity-card">
+        <%= button_to student_activity_path(current_student.id, activity.id), class: "card-link" do %>
+          <p><%= activity.description %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+-->
+
   <%# <script>
     const activities = document.querySelectorAll('.activity-card');
 
