@@ -6,9 +6,6 @@
     <% @activities.each do |activity| %>
         <div class="activity-card">
           <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do%>
-          <p><%= activity.description %></p>
-        <% end %>
-        </div>
     <% end %>
   </div>
 </div>
