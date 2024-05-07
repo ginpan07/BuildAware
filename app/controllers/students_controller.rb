@@ -47,6 +47,9 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def create
+  end
+
   private
 
   def student_params

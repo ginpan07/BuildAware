@@ -12,7 +12,7 @@
 <br>
 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
   <ul>
-    <%= link_to students_path(mood: "happy", student_id: @student.id) do %>
+    <%= link_to students_path(mood: "happy", student_id: @student.id, data: {turbo_method: :get}, class: "card-link") do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/ctlnzcle.json"
@@ -61,3 +61,15 @@
    <% end %>
   </ul>
 </div>
+
+<script>
+  function sendGetRequest() {
+    // You can use JavaScript to construct the URL with the necessary parameters
+    var mood = "happy";
+    var student_id = <%= @student.id %>; // Assuming @student.id is available in the view
+    var url = "/students?mood=" + encodeURIComponent(mood) + "&student_id=" + encodeURIComponent(student_id);
+
+    // Perform a GET request
+    window.location.href = url;
+  }
+</script>
