@@ -11,16 +11,26 @@ class StudentsController < ApplicationController
     #current_student.moods.create(mood: params[:mood])
 
     if @student.present? && @moods.present?
-      check_student_mood = @student.student_moods.find_by(mood_id: @moods.id)
-      if check_student_mood.nil?
-        @student.student_moods.create(student_id: @student.id, mood_id: @moods.id)
-      else
+      @check_student_mood_mood = @student.student_moods.find_by(mood_id: @moods.id)
+
+      if @check_student_mood_mood.nil?
+        @new_mood = @student.student_moods.new(student_id: @student.id, mood_id: @moods.id)
+        @new_mood.save
+      elsif @student.student_moods.find_by(student_id: @student.id) != @check_student_mood_mood
         @student.student_moods.last.update(mood_id: @moods.id)
+        # @check_student_mood_mood.update(mood_id: @moods.id)
+        # @check_student_mood_mood.save
       end
+
+      # Reorder the moods so that the updated mood is placed at the end
+      # @student.student_moods.reload.order(created_at: :asc).each_with_index do |student_mood, index|
+      #   student_mood.update(created_at: Time.now + index.seconds)
+      # end
+      #do it in the classroom_detail.html.erb
+
     else
       render "journal" # Render the journal page again if student or mood is missing
     end
-
   end
 
   def moods
@@ -28,6 +38,7 @@ class StudentsController < ApplicationController
     if @student.nil?
       render "moods"
     end
+
   end
 
   def activities
