@@ -9,7 +9,7 @@ class TeachersController < ApplicationController
   def mood_summary
     @classroom = Classroom.find(params[:id])
     @students = @classroom.students
-    @mood_summary = calculate_mood_summary(@students)
+    @student_moods = Mood.joins(:students)
   end
 
   def classroom_detail
@@ -23,7 +23,7 @@ class TeachersController < ApplicationController
   def calculate_mood_summary(students)
       summary = {}
       students.each do |student|
-          student.moods.each do |mood|
+          student_moods.moods each do |mood|
               summary[mood] ||= 0
               summary[mood] += 1
           end

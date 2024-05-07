@@ -52,11 +52,11 @@ sad.save
 devastated = Mood.new(mood: "devastated")
 devastated.save
 
-# StudentMood.create(student_id: 1, mood_id: 1)
-# StudentMood.create(student_id: 2, mood_id: 2)
-# StudentMood.create(student_id: 3, mood_id: 3)
-# StudentMood.create(student_id: 4, mood_id: 4)
-# StudentMood.create(student_id: 5, mood_id: 5)
+StudentMood.create(student_id: 1, mood_id: 1)
+StudentMood.create(student_id: 2, mood_id: 2)
+StudentMood.create(student_id: 3, mood_id: 3)
+StudentMood.create(student_id: 4, mood_id: 4)
+StudentMood.create(student_id: 5, mood_id: 5)
 
 # Happy - done
 Activity.create(description: "Hug your best friend!", mood: happy.mood)
