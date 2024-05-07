@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_27_054908) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_03_031905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,10 +31,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_054908) do
 
   create_table "moods", force: :cascade do |t|
     t.string "mood"
-    t.bigint "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_moods_on_student_id"
   end
 
   create_table "student_activities", force: :cascade do |t|
@@ -44,6 +42,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_054908) do
     t.bigint "activity_id", null: false
     t.index ["activity_id"], name: "index_student_activities_on_activity_id"
     t.index ["student_id"], name: "index_student_activities_on_student_id"
+  end
+
+  create_table "student_moods", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "mood_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_student_moods_on_mood_id"
+    t.index ["student_id"], name: "index_student_moods_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -76,8 +83,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_054908) do
   end
 
   add_foreign_key "classrooms", "teachers"
-  add_foreign_key "moods", "students"
   add_foreign_key "student_activities", "activities"
   add_foreign_key "student_activities", "students"
+  add_foreign_key "student_moods", "moods"
+  add_foreign_key "student_moods", "students"
   add_foreign_key "students", "classrooms"
 end

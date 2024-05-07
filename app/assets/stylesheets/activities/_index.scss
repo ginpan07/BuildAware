@@ -28,8 +28,6 @@
   margin-right: 150px;
   //animation: mymove 3s infinite;
   //animation: wiggle 3s infinite; /* Apply the wiggle animation */
-  background-color: var(--bg-color, #f6f193); /* Set default background color */
-  transition: background-color 0.3s ease;
 }
 
 .card-link {
@@ -39,36 +37,35 @@
 
 .activity-card:hover {
   border-style: inset;
-  // background-color: #d4d081;
-  --bg-color: var(--random-color);
+  background-color: #d4d081;
+  // --bg-color: var(--random-color);
 }
 
-.activity-card:active {
-  background-color: #A5DD9B;
-  transform: translateY(4px);
-  border-color: #A5DD9B;
-}
+// .activity-card:active {
+//   background-color: #A5DD9B;
+//   transform: translateY(4px);
+//   border-color: #A5DD9B;
+// }
 
-@keyframes mymove {
-  // 90% {border: 5px inset lightblue;}
-  50% {box-shadow: 5px 10px 20px rgb(117, 220, 227);}
-}
+// @keyframes mymove {
+//   // 90% {border: 5px inset lightblue;}
+//   50% {box-shadow: 5px 10px 20px rgb(117, 220, 227);}
+// }
 
-
-@keyframes wiggle {
-  0% {
-    border-color: red;
-  }
-  25% {
-    border-color: blue;
-  }
-  50% {
-    border-color: green;
-  }
-  75% {
-    border-color: yellow;
-  }
-  100% {
-    border-color: orange;
-  }
-}
+// @keyframes wiggle {
+//   0% {
+//     border-color: red;
+//   }
+//   25% {
+//     border-color: blue;
+//   }
+//   50% {
+//     border-color: green;
+//   }
+//   75% {
+//     border-color: yellow;
+//   }
+//   100% {
+//     border-color: orange;
+//   }
+// }
