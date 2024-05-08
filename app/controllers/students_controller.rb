@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
       if @check_student_mood_mood.nil?
         @new_mood = @student.student_moods.new(student_id: @student.id, mood_id: @moods.id)
         @new_mood.save
-      elsif @student.student_moods.find_by(student_id: @student.id) != @check_student_mood_mood
+      else
         @student.student_moods.last.update(mood_id: @moods.id)
         # @check_student_mood_mood.update(mood_id: @moods.id)
         # @check_student_mood_mood.save
