@@ -3,10 +3,16 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["myCanvas"];
 
-  // Add a variable to store the selected color
   selectedColor = "#000"; // Default color is black
+  canvasWidth = 800; // Default canvas width
+  canvasHeight = 400; // Default canvas height
+  brushSize = 5; // Default brush size
+  isErasing = false; // Whether eraser mode is enabled
 
   connect() {
+    this.setupCanvas();
+    window.addEventListener("resize", this.setupCanvas.bind(this));
+
     const canvas = this.myCanvasTarget;
     const ctx = canvas.getContext("2d");
     let painting = false;
@@ -21,59 +27,58 @@ export default class extends Controller {
     canvas.addEventListener("touchmove", draw);
 
     // Button to clear canvas
-    const clearButton = document.createElement("button");
-    clearButton.textContent = "Clear Canvas";
-    clearButton.classList.add("clear-canvas-button");
-    clearButton.style.position = "relative";
-    clearButton.style.fontFamily = "Happy Monkey, cursive";
-    clearButton.style.fontSize = "18px";
-    clearButton.style.fontWeight = "bold";
-    clearButton.style.width = "200px";
-    clearButton.style.height = "60px";
-    clearButton.style.bottom = "110px";
-    clearButton.style.left = "350px";
-    clearButton.style.padding = "10px";
-    clearButton.style.backgroundColor = "#f6f193";
-    clearButton.style.border = "6px outset #d4d081";
-    clearButton.style.borderRadius = "10px";
-    clearButton.style.outline = "2px solid black";
-    clearButton.style.boxShadow = "0 0 0 1px black inset";
-
-    clearButton.addEventListener("mouseenter", function() {
-      clearButton.style.backgroundColor = "#d4d081";
-      clearButton.style.borderStyle = "inset";
-    });
-
-    clearButton.addEventListener("mouseleave", function() {
-      clearButton.style.backgroundColor = "#f6f193";
-      clearButton.style.border = "6px outset #d4d081";
-      clearButton.style.borderRadius = "10px";
-      clearButton.style.outline = "2px solid black";
-      clearButton.style.boxShadow = "0 0 0 1px black inset";
-    });
-
+    const clearButton = this.createButton("Clear Canvas");
     clearButton.addEventListener("click", clearCanvas);
-    this.element.appendChild(clearButton);
 
     // Button to select color
     const colorButton = document.createElement("input");
     colorButton.type = "color";
-    colorButton.value = "#000"; // Default color is black
-    colorButton.style.position = "relative";
-    colorButton.style.bottom = "170px";
-    colorButton.style.left = "150px";
-    colorButton.style.width = "200px";
-    colorButton.style.height = "60px";
+    colorButton.style.width = "8em";
+    colorButton.style.height = "3em";
+    colorButton.style.margin = "10px";
+    colorButton.style.backgroundColor = "#f6f193";
     colorButton.style.border = "6px outset #d4d081";
     colorButton.style.borderRadius = "10px";
     colorButton.style.outline = "2px solid black";
     colorButton.style.boxShadow = "0 0 0 1px black inset";
+    colorButton.value = "#000"; // Default color is black
     colorButton.addEventListener("change", (e) => {
       this.selectedColor = e.target.value;
+      this.isErasing = false; // Disable eraser when changing color
     });
-    this.element.appendChild(colorButton);
 
-    // Capture the controller instance
+    // Button to change brush size
+    const brushSizeButton = document.createElement("input");
+    brushSizeButton.type = "number";
+    brushSizeButton.style.fontFamily = "Happy Monkey, cursive";
+    brushSizeButton.style.fontSize = "18px";
+    brushSizeButton.style.fontWeight = "bold";
+    brushSizeButton.style.width = "8em";
+    brushSizeButton.style.height = "3em";
+    brushSizeButton.style.margin = "10px";
+    brushSizeButton.style.backgroundColor = "#f6f193";
+    brushSizeButton.style.border = "6px outset #d4d081";
+    brushSizeButton.style.borderRadius = "10px";
+    brushSizeButton.style.outline = "2px solid black";
+    brushSizeButton.style.boxShadow = "0 0 0 1px black inset";
+    brushSizeButton.min = 1;
+    brushSizeButton.max = 100;
+    brushSizeButton.value = this.brushSize;
+    brushSizeButton.addEventListener("change", (e) => {
+      this.brushSize = parseInt(e.target.value);
+      this.isErasing = false; // Disable eraser when changing brush size
+    });
+
+    // Button to toggle eraser mode
+    const eraserButton = this.createButton("Eraser");
+    eraserButton.addEventListener("click", toggleEraser);
+
+    const container = document.getElementById("canvas-container");
+    container.appendChild(colorButton);
+    container.appendChild(brushSizeButton);
+    container.appendChild(eraserButton);
+    container.appendChild(clearButton);
+
     const controller = this;
 
     function startPosition(e) {
@@ -88,13 +93,15 @@ export default class extends Controller {
 
     function draw(e) {
       if (!painting) return;
-      ctx.lineWidth = 5;
+      ctx.lineWidth = controller.brushSize;
       ctx.lineCap = "round";
 
-      // Use the selected color from the controller instance
-      ctx.strokeStyle = controller.selectedColor;
+      if (controller.isErasing) {
+        ctx.strokeStyle = "#ffffff"; // Set color to white for eraser
+      } else {
+        ctx.strokeStyle = controller.selectedColor;
+      }
 
-      // Get touch or mouse coordinates
       let x, y;
       if (e.type.startsWith("touch")) {
         x = e.touches[0].clientX - canvas.offsetLeft;
@@ -113,5 +120,54 @@ export default class extends Controller {
     function clearCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
+
+    function toggleEraser() {
+      controller.isErasing = !controller.isErasing;
+      eraserButton.textContent = controller.isErasing ? "Brush" : "Eraser";
+    }
+  }
+
+  setupCanvas() {
+    const canvas = this.myCanvasTarget;
+    const container = document.getElementById("canvas-container");
+    const rect = container.getBoundingClientRect();
+
+    this.canvasWidth = rect.width;
+    this.canvasHeight = rect.height;
+
+    canvas.width = this.canvasWidth;
+    canvas.height = this.canvasHeight;
+  }
+
+  createButton(text) {
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.classList.add("canvas-button");
+    button.style.fontFamily = "Happy Monkey, cursive";
+    button.style.fontSize = "18px";
+    button.style.fontWeight = "bold";
+    button.style.width = "8em";
+    button.style.height = "3em";
+    button.style.margin = "10px";
+    button.style.backgroundColor = "#f6f193";
+    button.style.border = "6px outset #d4d081";
+    button.style.borderRadius = "10px";
+    button.style.outline = "2px solid black";
+    button.style.boxShadow = "0 0 0 1px black inset";
+
+    button.addEventListener("mouseenter", function() {
+      button.style.backgroundColor = "#d4d081";
+      button.style.borderStyle = "inset";
+    });
+
+    button.addEventListener("mouseleave", function() {
+      button.style.backgroundColor = "#f6f193";
+      button.style.border = "6px outset #d4d081";
+      button.style.borderRadius = "10px";
+      button.style.outline = "2px solid black";
+      button.style.boxShadow = "0 0 0 1px black inset";
+    });
+
+    return button;
   }
 }
