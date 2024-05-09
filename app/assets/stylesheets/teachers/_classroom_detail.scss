@@ -1,0 +1,42 @@
+.classroom-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 20px;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 20px 20px 9px rgba(0, 0, 0, 0.45);
+  background-color: rgb(255, 255, 255);
+}
+
+.classroom-table td {
+  font-size: 15px;
+}
+.classroom-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+
+.classroom-table th,
+.classroom-table td {
+    padding: 12px 15px;
+}
+
+.classroom-table tbody tr {
+  border-bottom: 1px solid #057861;
+}
+
+.classroom-table tbody tr:nth-of-type(even) {
+  //background-color: #ffffff;
+}
+
+.classroom-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.classroom-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+tr:hover {background-color: rgb(96, 191, 128);}

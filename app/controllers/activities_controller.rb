@@ -6,11 +6,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    #@stu_activity = StudentActivity.find(params[:id])
-    # if @stu_activity.present?
-    #   @activity = @stu_activity.activity
-    # end#
-
     @activity = Activity.find(params[:id])
     @student = current_student
 

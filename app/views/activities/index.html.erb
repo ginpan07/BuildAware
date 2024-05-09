@@ -1,19 +1,5 @@
 <h1>Please choose an activity</h1>
 
-<!--
-<div class="activity-container">
-  <div class="container">
-    <% @activities.each do |activity| %>
-        <div class="activity-card">
-          <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do%>
-          <p><%= activity.description %></p>
-        <% end %>
-        </div>
-    <% end %>
-  </div>
-</div>
--->
-
 <div class="activity-container">
   <div class="container">
     <% @activities.each do |activity| %>
@@ -25,17 +11,3 @@
     <% end %>
   </div>
 </div>
-
-  <%# <script>
-    const activities = document.querySelectorAll('.activity-card');
-
-    // Function to g@enerate random color
-    function getRandomColor() {
-      return '#' + Math.floor(Math.random()*16777215).toString(16);
-    }
-
-    // Set random color to each box
-    activities.forEach(activity => {
-      activity.style.setProperty('--random-color', getRandomColor());
-    });
-  </script> %>

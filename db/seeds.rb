@@ -13,33 +13,41 @@ require "faker"
 teacher = Teacher.create!(
   name: Faker::Name.first_name,
   email: Faker::Internet.email,
-  password: '123456'
+  password: '123456',
+  role: 'teacher'
 )
 classroom = Classroom.create!(
   teacher: teacher,
   name: Faker::Name.first_name
 )
 
+if teacher.save
+  puts "Teacher created with email: #{teacher.email}"
+else
+  puts "Error creating user: #{teacher.errors.full_messages}"
+end
 # puts classroom
 # Create Student instances associated with the Classroom
 
 10.times do
   student = Student.new(
     name: Faker::Name.first_name,
-    age: Faker::Number.number(digits: 1),
+    age: rand(6..12),
     email: Faker::Internet.email,
     password: '123456',
     classroom_id: classroom.id,
+    role: 'student'
   )
 
   # student.mood.build(mood: "happy")
 
   if student.save
-    puts "User created with email: #{student.email}"
+    puts "Student created with email: #{student.email}"
   else
     puts "Error creating user: #{student.errors.full_messages}"
   end
 end
+
 
 happy = Mood.new(mood: "happy")
 happy.save

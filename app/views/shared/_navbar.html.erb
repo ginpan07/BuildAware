@@ -1,7 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to students_moods_path, class: "navbar-brand" do %>
-      <%= image_tag "buildaware_cropped.png" %>
+    <% if teacher_signed_in? && current_teacher.role == "teacher" && !student_signed_in?%>
+       <%= link_to teacher_main_page_path, class: "navbar-brand" do %>
+        <%= image_tag "buildaware_cropped.png" %>
+      <% end %>
+    <% elsif student_signed_in? && current_student.role == "student" || !teacher_signed_in?%>
+      <%= link_to students_moods_path, class: "navbar-brand" do %>
+        <%= image_tag "buildaware_cropped.png" %>
+      <% end %>
+    <% else %>
+      <%= link_to students_moods_path, class: "navbar-brand" do %>
+        <%= image_tag "buildaware_cropped.png" %>
+      <% end %>
     <% end %>
 
     <% if student_signed_in? %>
@@ -27,23 +37,24 @@
           </li>
         <% end %>
 
+        <!--
         <% if student_signed_in? || teacher_signed_in? %>
           <li class="nav-item dropdown">
             <% if teacher_signed_in? %>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Account
+               <%= current_teacher.name %>
               </a>
             <% end %>
             <% user = student_signed_in? ? current_student : current_teacher %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if teacher_signed_in? %>
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Mood Summary", "#", class: "dropdown-item" %>
+                <%= link_to "Classroom detail",  "#", class: "dropdown-item" %>
               <% end %>
               <%= link_to "Log out", student_signed_in? ? destroy_student_session_path : destroy_teacher_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
-        <% end %>
+        <% end %> -->
       </ul>
     </div>
   </div>
