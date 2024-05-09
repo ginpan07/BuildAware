@@ -134,6 +134,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google_visualr (2.5.1)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -314,6 +315,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   faker
   font-awesome-sass (~> 6.1)
+  google_visualr
   importmap-rails
   jbuilder
   pg (~> 1.1)

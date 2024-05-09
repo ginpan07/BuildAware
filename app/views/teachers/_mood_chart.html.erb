@@ -1,0 +1,24 @@
+<script>
+  google.charts.load('current', { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Mood', 'Count'],
+      <% @mood_summary.each do |mood, count| %>
+        ['<%= mood %>', <%= count %>],
+      <% end %>
+    ]);
+
+    var options = {
+      title: 'Mood Summary',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('moodChart'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+<div id="moodChart" style="width: 100%; height: 400px;"></div>
