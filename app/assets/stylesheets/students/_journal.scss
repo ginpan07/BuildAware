@@ -21,7 +21,7 @@ h1 {
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 0;
+  padding-bottom: 30px;
   outline: 2px solid black;
   box-shadow: 0 0 0 1px black inset;
   margin: 0;
@@ -79,24 +79,24 @@ h1 {
 }
 
 .answers {
-  max-width: 30%;
-  margin-top: 20px; /* added margin top for spacing */
+  width: 40%;
+  margin-left: 2%;
 }
 
-.canvas-container {
-  max-width: 40%;
+#canvas-container {
+  width: 50%;
+  height: 40vh;
+  margin-right: 2%;
 }
 
 .canvas {
-  background-color: #f6f193;
+  background-color: white;
   border: 10px outset #d4d081;
   box-shadow: 0 0 0 1px black inset;
   border-radius: 10px;
   margin-right: 20px;
   outline: 2px solid black;
   cursor: crosshair;
-  max-width: 100%;
-  height: auto;
 }
 
 .no-style {
