@@ -1,4 +1,4 @@
-<!--<div>
+<div>
   <% unless student_signed_in? %>
     <%= link_to "Student Login", new_student_session_path, class: "h1" %>
   <% end %>
@@ -11,6 +11,23 @@
     <%= link_to "Teacher Login", new_teacher_session_path, class: "h1" %>
   <% end %>
 </div>
--->
 
-<h1>Please login to continue</h1>
+<div class="homecontainer">
+<div class="home">
+<%= image_tag "buildaware_cropped.png" %>
+</div>
+</div>
+
+<script>
+
+        // Define a function to redirect to the sign-in page after a specified duration
+        function redirectToSignIn() {
+            setTimeout(function() {
+                // Redirect to the sign-in page
+                window.location.href = "students/sign_in";
+            }, 7000); // Adjust the duration (in milliseconds) as needed
+        }
+
+        // Call the redirectToSignIn function when the page loads
+        window.onload = redirectToSignIn;
+    </script>
