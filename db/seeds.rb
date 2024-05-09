@@ -53,6 +53,7 @@ devastated = Mood.new(mood: "devastated")
 devastated.save
 
 StudentMood.create(student_id: 1, mood_id: 1)
+StudentMood.create(student_id: 1, mood_id: 1)
 StudentMood.create(student_id: 2, mood_id: 2)
 StudentMood.create(student_id: 3, mood_id: 3)
 StudentMood.create(student_id: 4, mood_id: 4)
