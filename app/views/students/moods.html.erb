@@ -12,7 +12,7 @@
 <br>
 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
   <ul>
-    <%= link_to students_path(mood: "happy", student_id: @student.id, data: {turbo_method: :get}, class: "card-link") do %>
+    <%= link_to students_path(mood: "happy", student_id: @student.id, id: "happyLink") do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/ctlnzcle.json"
@@ -63,13 +63,11 @@
 </div>
 
 <script>
-  function sendGetRequest() {
-    // You can use JavaScript to construct the URL with the necessary parameters
-    var mood = "happy";
-    var student_id = <%= @student.id %>; // Assuming @student.id is available in the view
-    var url = "/students?mood=" + encodeURIComponent(mood) + "&student_id=" + encodeURIComponent(student_id);
+  document.getElementById('happyLink').addEventListener('mouseenter', function(event) {
+    event.preventDefault(); // Prevent the default link behavior when mouse enters the link
+  });
 
-    // Perform a GET request
-    window.location.href = url;
-  }
+  document.getElementById('happyLink').addEventListener('mouseleave', function(event) {
+    // This function can be left empty or removed, as we want the default link behavior to resume when mouse leaves the link
+  });
 </script>
