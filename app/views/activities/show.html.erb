@@ -1,6 +1,16 @@
+<div class="arrow">
+  <%= link_to :back, class: "arrow_image" do %>
+  <%= image_tag "arrow2.png" %>
+  <% end %>
+</div>
 
+<div class="title">
+  <h2>Activity</h2>
+</div>
 
-<h1>Please do the following: <%= @activity.description %> </h1>
+<div class="description">
+  <p>Please do the following: <%= @activity.description %> </p>
+</div>
 
 <div class="container-icon">
 
@@ -18,221 +28,272 @@
 </div>
 <div class="container-count">
 
-<div id="countdown">30</div>
 <!-- Happy -->
 
   <% if @activity.description == "Hug your best friend!" %>
+  <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
               delay= "1000"
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+  </div>
 
   <% elsif @activity.description == "Check in with your best friend!" %>
+  <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
               src="https://cdn.lordicon.com/kiynvdns.json"
               trigger="loop"
               delay="1000"
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+  </div>
 
   <% elsif @activity.description == "Dance with your teacher/friend!" %>
+    <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
              src="https://cdn.lordicon.com/lnmgxmyk.json"
              trigger="loop"
              delay="500"
-
-          style="width:650px;height:650px">
+              style="width:500px;height:500px">
+    </div>
 
   <% elsif @activity.description == "Draw happiness on a piece of paper!" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/bksjdgoo.json"
               trigger="loop"
 
-             style="width:650px;height:650px">
-
+             style="width:500px;height:500px">
+  </div>
  <% elsif @activity.description == "Ask a friend if they are okay" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
         src="https://cdn.lordicon.com/kiynvdns.json"
         trigger="loop"
         delay="1000"
-       style="width:650px;height:650px">
-
+        style="width:500px;height:500px">
+  </div>
 <!-- Angry -->
 
   <% elsif @activity.description == "Talk to a friend you like" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
         src="https://cdn.lordicon.com/kiynvdns.json"
         trigger="loop"
         delay="1000"
-        style="width:650px;height:650px">
+              style="width:500px;height:500px">
+          </div>
 
   <% elsif @activity.description == "Draw a picture of your anger" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/bksjdgoo.json"
               trigger="loop"
 
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+                </div>
 
   <% elsif @activity.description == "Run outside the classrom five times" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vkycdaci.json"
             trigger="loop"
 
-           style="width:650px;height:650px">
+              style="width:500px;height:500px">
+             </div>
 
   <% elsif @activity.description == "Draw on a piece of paper!" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Take 10 long breathes" %>
+    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/xvhlktlr.json"
             trigger="loop"
             delay="1000"
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <!-- Neutral -->
 
   <% elsif @activity.description == "Hug a teddy bear!" %>
+     <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
               delay= "1000"
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+                </div>
 
   <% elsif @activity.description == "Speed walk outside the classroom!" %>
+     <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vkycdaci.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Jog around the block!" %>
+     <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vkycdaci.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Draw on a piece of paper!" %>
+     <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Write on a piece of paper!" %>
+     <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <!-- Sad -->
 
   <% elsif @activity.description == "Hug a teddy bear!" %>
+   <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
               delay= "1000"
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Talk to a friend you trust" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
      <lord-icon
         src="https://cdn.lordicon.com/kiynvdns.json"
         trigger="loop"
         delay="1000"
-        style="width:650px;height:650px">
+              style="width:500px;height:500px">
+        </div>
 
   <% elsif @activity.description == "Take 10 calm belly breathes" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/xvhlktlr.json"
             trigger="loop"
             delay="1000"
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <% elsif @activity.description == "Draw/Write sadness on a piece of paper!" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <% elsif @activity.description == "Listen to music!" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/wxsbvjgg.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <!-- Devastated -->
 
   <% elsif @activity.description == "Talk with teacher" %>
+   <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
             src="https://cdn.lordicon.com/kiynvdns.json"
             trigger="loop"
             delay="1000"
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <% elsif @activity.description == "Chat with a friend" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
             src="https://cdn.lordicon.com/kiynvdns.json"
             trigger="loop"
             delay="1000"
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <% elsif @activity.description == "Hug a teddy bear/someone you like" %>
+   <div class="activity">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
               src="https://cdn.lordicon.com/zxlywduw.json"
               trigger="loop"
               delay= "1000"
-              style="width:650px;height:650px">
+              style="width:500px;height:500px">
+              </div>
 
   <% elsif @activity.description == "Draw anything on a piece of paper" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
             src="https://cdn.lordicon.com/vhyuhmbl.json"
             trigger="loop"
 
-            style="width:650px;height:650px">
+              style="width:500px;height:500px">
+            </div>
 
   <% elsif @activity.description == "Write down your feelings" %>
+   <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
           src="https://cdn.lordicon.com/vhyuhmbl.json"
           trigger="loop"
           delay="1000"
-          style="width:650px;height:650px">
+              style="width:500px;height:500px">
+          </div>
 
   <% end %>
 </div>
 </div>
+
+<div class="footer">
+  <div id="countdown">30</div>
+</div>
+
 
 <script>
     function countdown(elementName, seconds) {
