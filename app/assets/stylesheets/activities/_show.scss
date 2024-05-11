@@ -113,8 +113,8 @@ body {
 
 .popup {
   width: 800px;
-  height: 75vh;
-  background: url("background4.png");
+  height: 35vh;
+  background: rgba(253, 252, 251, 0.5);
   border-radius: 6px;
   position: absolute;
   top: 50%;
@@ -125,7 +125,6 @@ body {
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
-  z-index: 999;
 }
 
 .popup button {
@@ -153,6 +152,46 @@ body {
   padding-top: 150px;
 }
 
+/* .rainy-weather {
+  margin: 3em auto;
+  width: 350px;
+  height: 400px;
+  position: relative;
+}
+
+.cloud-main {
+  width: 350px;
+  height: 130px;
+  background: #ccc;
+  border-radius: 100em;
+  position: absolute;
+  z-index: 100;
+  top: 50px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#f2f2f2 70%, #e5e5e5);
+}
+
+.cloud-center {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  background: #f2f2f2;
+  position: absolute;
+  border-radius: 100em;
+  top: -30px;
+  right: 50px;
+}
+
+.cloud-left {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  background: #f2f2f2;
+  position: absolute;
+  border-radius: 100em;
+  top: 0;
+  right: 160px;
+} */
 // #ten-countdown {
 //   font-family: sans-serif;
 //   width: 200px;
