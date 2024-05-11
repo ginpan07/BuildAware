@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <% if teacher_signed_in? && current_teacher.role == "teacher" && !student_signed_in?%>
@@ -26,16 +27,16 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+<%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
 
-
-        <% if !(student_signed_in? || teacher_signed_in?) %>
+        <!--<% if !(student_signed_in? || teacher_signed_in?) %>
           <li class="nav-item">
             <%= link_to "Student Login", new_student_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+
           </li>
-        <% end %>
+        <% end %>-->
 
         <!--
         <% if student_signed_in? || teacher_signed_in? %>
@@ -58,4 +59,5 @@
       </ul>
     </div>
   </div>
+</div>
 </div>
