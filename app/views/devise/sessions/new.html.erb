@@ -1,4 +1,7 @@
-<h2>Log in</h2>
+
+
+<div class="lgin">
+<%= image_tag "buildaware_cropped.png" %>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -18,3 +21,14 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%= link_to "Teacher Login", new_teacher_session_path, class: "nav-link" %>
+<br>
+
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/qiftripq.json"
+    trigger="loop"
+    delay="2000"
+    style="width:250px;height:250px">
+</lord-icon>
+</div>
