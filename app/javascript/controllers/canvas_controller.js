@@ -33,14 +33,15 @@ export default class extends Controller {
     // Button to select color
     const colorButton = document.createElement("input");
     colorButton.type = "color";
-    colorButton.style.width = "8em";
-    colorButton.style.height = "3em";
+    colorButton.style.width = "9em";
+    colorButton.style.height = "3.3em";
     colorButton.style.margin = "10px";
     colorButton.style.backgroundColor = "#f6f193";
     colorButton.style.border = "6px outset #d4d081";
     colorButton.style.borderRadius = "10px";
     colorButton.style.outline = "2px solid black";
     colorButton.style.boxShadow = "0 0 0 1px black inset";
+    colorButton.style.verticalAlign = "middle";
     colorButton.value = "#000"; // Default color is black
     colorButton.addEventListener("change", (e) => {
       this.selectedColor = e.target.value;
@@ -171,3 +172,27 @@ export default class extends Controller {
     return button;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  let popup = document.getElementById("popup");
+  let customAnswerButton = document.getElementById("customAnswerButton");
+
+  // Bind click event to the "Add Custom Answer" button
+  customAnswerButton.addEventListener("click", function() {
+    displayPopup();
+  });
+
+  // Bind click event to the "Submit" link within the modal
+  document.getElementById("submitLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default action (navigation)
+    closePopup();
+  });
+
+  function displayPopup() {
+    popup.style.display = 'block';
+  }
+
+  function closePopup() {
+    popup.style.display = 'none';
+  }
+});
