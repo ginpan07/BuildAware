@@ -1,42 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jersey+20&display=swap');
 
-// .activity-card {
-//   border-style: outset;
-//   margin-bottom: 10px;
-//   font-style: normal;
-//   text-align: center;
-//   display: flex;
-//   justify-content: center;
-//   text-align: center;
-//   align-items: center;
-//   font-family: "Happy Monkey", cursive;
-//   font-size: 30px;
-//   min-height: 100px;
-//   margin-top: 30px;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   padding-top: 5px;
-//   min-width: -webkit-fill-available;
-//   max-width: -webkit-fill-available;
-//   border-radius: 10px;
-//   border: 6px outset #d4d081;
-//   font-weight: bold;
-//   background-color: #f6f193;
-//   outline: 2px solid black;
-//   margin-left: 150px;
-//   margin-right: 150px;
-//   //animation: mymove 3s infinite;
-//   //animation: wiggle 3s infinite; /* Apply the wiggle animation */
-//   //background-color: var(--bg-color, #f6f193); /* Set default background color */
-//   //transition: background-color 0.3s ease;
-// }
+.activity-container {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
 
 .card-link {
   text-decoration: none;
   color: black;
-  background-color: #f6f193;
-  border: none;
   border-style: outset;
   margin-bottom: 10px;
   font-style: normal;
@@ -55,28 +27,60 @@
   min-width: -webkit-fill-available;
   max-width: -webkit-fill-available;
   border-radius: 10px;
-  border: 6px outset #d4d081;
   font-weight: bold;
-  background-color: #f6f193;
+  background: rgba(191, 127, 37, 0.5);
+  // #FFF1DE (255,241,222)
   outline: 2px solid black;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 70px;
+  margin-right: 70px;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .card-link:hover{
   border-style: inset;
   background-color: #d4d081;
-  // --bg-color: var(--random-color);
 }
 
-// .activity-card:hover{
-//   border-style: inset;
-//   background-color: #d4d081;
-//   // --bg-color: var(--random-color);
-// }
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .card-link {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
 
-// .activity-card:active {
-//   background-color: #A5DD9B;
-//   transform: translateY(4px);
-//   border-color: #A5DD9B;
-// }
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .card-link {
+    font-size: 20px; /* Further adjust font size for even smaller screens */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.arrow {
+  width: auto; /* Set the width of the image */
+  height: auto;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.arrow img {
+  width: 50px;
+  height: auto;
+}
+
+.title {
+  width: auto; /* Set the width of the image */
+  height: auto;
+  display: flex;
+  margin-left: 20px;
+}
+
+.description {
+  display:flex;
+  margin-left: 20px;
+}

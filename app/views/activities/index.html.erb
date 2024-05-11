@@ -1,7 +1,21 @@
-<h1>Please choose an activity</h1>
+<%# <h1>Please choose an activity</h1> %>
+
+<div class="arrow">
+  <%= link_to teacher_main_page_path, class: "arrow_image" do %>
+  <%= image_tag "arrow2.png" %>
+  <% end %>
+</div>
+
+<div class="title">
+  <h2>Activities</h2>
+</div>
+
+<div class="description">
+  <p>Select one of the activities for you to do</p>
+</div>
 
 <div class="activity-container">
-  <div class="container">
+  <div class="ccontainer">
     <% @activities.each do |activity| %>
       <div class="activity-card">
         <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do %>
