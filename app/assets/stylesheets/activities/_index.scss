@@ -9,8 +9,8 @@
 .card-link {
   text-decoration: none;
   color: black;
-  border-style: outset;
   margin-bottom: 10px;
+  border: 1px solid rgba(59, 159, 214, 0.2);
   font-style: normal;
   text-align: center;
   display: flex;
@@ -26,11 +26,10 @@
   padding-top: 5px;
   min-width: -webkit-fill-available;
   max-width: -webkit-fill-available;
-  border-radius: 10px;
+  border-radius: 40px;
   font-weight: bold;
-  background: rgba(191, 127, 37, 0.5);
+  background: rgba(164, 163, 165, 0.5);
   // #FFF1DE (255,241,222)
-  outline: 2px solid black;
   margin-left: 70px;
   margin-right: 70px;
   box-shadow: 10px 10px 5px lightblue;
