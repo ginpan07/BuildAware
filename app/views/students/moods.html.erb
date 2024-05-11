@@ -1,4 +1,4 @@
-<div style="display:flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap">
+<div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
   <h1>Welcome!</h1> <!-- Add dynamic name-->
 </div>
 <br>
@@ -10,56 +10,56 @@
 <br>
 <br>
 <br>
-<div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-  <ul>
+<div class="emojis">
+  <div class="emoji1">
     <%= link_to students_path(mood: "happy", student_id: @student.id, id: "happyLink") do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/ctlnzcle.json"
-      trigger="loop" delay="1000" style="width:250px;height:250px">
+      trigger="loop" delay="1000" style="width:125px;height:125px">
     </lord-icon>
     <% end %>
-  </ul>
+  </div>
 
-  <ul>
+  <div class="emoji2">
     <%= link_to students_path(mood: "angry", student_id: @student.id) do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/cdtaelne.json"
-      trigger="loop" delay="1000" style="width:250px;height:250px">
+      trigger="loop" delay="1000" style="width:125px;height:125px">
     </lord-icon>
     <% end %>
-  </ul>
+  </div>
 
-  <ul>
+  <div class="emoji3">
     <%= link_to students_path(mood: "neutral", student_id: @student.id) do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/igfwsclw.json"
-      trigger="loop" delay="1000" style="width:250px;height:250px">
+      trigger="loop" delay="1000" style="width:125px;height:125px">
     </lord-icon>
     <% end %>
-  </ul>
+  </div>
 
-  <ul>
+  <div class="emoji4">
     <%= link_to students_path(mood: "sad", student_id: @student.id) do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/wpeowyrp.json"
-      trigger="loop" delay="1000" style="width:250px;height:250px">
+      trigger="loop" delay="1000" style="width:125px;height:125px">
     </lord-icon>
     <% end %>
-  </ul>
+  </div>
 
-  <ul>
+  <div class="emoji5">
     <%= link_to students_path(mood: "devastated", student_id: @student.id) do %>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <lord-icon
       src="https://cdn.lordicon.com/nphieykw.json"
-      trigger="loop" delay="1000" style="width:250px;height:250px">
+      trigger="loop" delay="1000" style="width:125px;height:125px">
    </lord-icon>
    <% end %>
-  </ul>
+  </div>
 </div>
 
 <script>

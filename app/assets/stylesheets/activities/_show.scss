@@ -114,7 +114,7 @@ body {
 .popup {
   width: 800px;
   height: 75vh;
-  background: #c5ebaa;
+  background: url("background4.png");
   border-radius: 6px;
   position: absolute;
   top: 50%;
@@ -132,21 +132,22 @@ body {
   width: 50%;
   margin-top: 50px;
   padding: 10px 0;
-  background: #04aa6d;
+  background: rgba(191, 127, 37, 0.5);
   color: #fff;
   border: 0;
   outline: none;
   font-size: 25px;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 9px #999;
   z-index: 999;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .close-popup,
 .closeNew-popup {
   visibility: visible;
-  top: 72%;
+  top: 55vh;
   transform: translate(-50%, -50%) scale(1);
   z-index: 999;
   padding-top: 150px;
