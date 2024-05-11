@@ -33,14 +33,17 @@ export default class extends Controller {
     // Button to select color
     const colorButton = document.createElement("input");
     colorButton.type = "color";
-    colorButton.style.width = "8em";
-    colorButton.style.height = "3em";
+    colorButton.style.width = "9em";
+    colorButton.style.height = "3.3em";
+    colorButton.style.position = "relative";
+    colorButton.style.bottom = "3px";
     colorButton.style.margin = "10px";
     colorButton.style.backgroundColor = "#f6f193";
     colorButton.style.border = "6px outset #d4d081";
     colorButton.style.borderRadius = "10px";
     colorButton.style.outline = "2px solid black";
     colorButton.style.boxShadow = "0 0 0 1px black inset";
+    colorButton.style.verticalAlign = "middle";
     colorButton.value = "#000"; // Default color is black
     colorButton.addEventListener("change", (e) => {
       this.selectedColor = e.target.value;
@@ -51,6 +54,7 @@ export default class extends Controller {
     const brushSizeButton = document.createElement("input");
     brushSizeButton.type = "number";
     brushSizeButton.style.fontFamily = "Happy Monkey, cursive";
+    brushSizeButton.style.textAlign = "center";
     brushSizeButton.style.fontSize = "18px";
     brushSizeButton.style.fontWeight = "bold";
     brushSizeButton.style.width = "8em";
@@ -66,7 +70,7 @@ export default class extends Controller {
     brushSizeButton.value = this.brushSize;
     brushSizeButton.addEventListener("change", (e) => {
       this.brushSize = parseInt(e.target.value);
-      this.isErasing = false; // Disable eraser when changing brush size
+   // Disable eraser when changing brush size
     });
 
     // Button to toggle eraser mode

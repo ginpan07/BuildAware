@@ -1,7 +1,7 @@
 <%# <h1>Please choose an activity</h1> %>
 
 <div class="arrow">
-  <%= link_to teacher_main_page_path, class: "arrow_image" do %>
+  <%= link_to students_path(mood: "devastated", student_id: current_student.id), class: "arrow_image" do %>
   <%= image_tag "arrow2.png" %>
   <% end %>
 </div>

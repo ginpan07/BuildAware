@@ -62,20 +62,22 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  max-width: 650px; /* Adjust maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 #countdown {
-  width: 300px;
-  height: 300px;
+  width: 170px;
+  height: 170px;
   font-family: "Archivo Black", cursive;
-  font-size: 7rem;
-  font-weight: bold;
-  padding: 50px;
+  font-size: 6rem;
+  padding: 10px;
   text-align: center;
-  color: rgb(5, 5, 5);
-  border: 10px solid blue;
+  color: #050505;
   border-radius: 50%;
   margin: 10px auto;
+  background: white;
+  font-weight: bold;
 }
 
 /* #popup {
@@ -152,46 +154,6 @@ body {
   padding-top: 150px;
 }
 
-/* .rainy-weather {
-  margin: 3em auto;
-  width: 350px;
-  height: 400px;
-  position: relative;
-}
-
-.cloud-main {
-  width: 350px;
-  height: 130px;
-  background: #ccc;
-  border-radius: 100em;
-  position: absolute;
-  z-index: 100;
-  top: 50px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(#f2f2f2 70%, #e5e5e5);
-}
-
-.cloud-center {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
-  background: #f2f2f2;
-  position: absolute;
-  border-radius: 100em;
-  top: -30px;
-  right: 50px;
-}
-
-.cloud-left {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto;
-  background: #f2f2f2;
-  position: absolute;
-  border-radius: 100em;
-  top: 0;
-  right: 160px;
-} */
 // #ten-countdown {
 //   font-family: sans-serif;
 //   width: 200px;
@@ -216,4 +178,20 @@ body {
 //   opacity: 0;
 //   transform: scale(1.6, 1.6);
 //   transition: all 0.4s ease-out;
+// }
+
+// @media screen and (max-width: 768px) {
+//   .activity {
+//     font-size: 24px; /* Adjust font size for smaller screens */
+//     margin-left: 50px;
+//     margin-right: 50px;
+//   }
+// }
+// /* Media query for even smaller screens */
+// @media screen and (max-width: 480px) {
+//   .activity {
+//     font-size: 20px; /* Further adjust font size for even smaller screens */
+//     margin-left: 20px;
+//     margin-right: 20px;
+//   }
 // }

@@ -4,6 +4,7 @@
 
   <h4>Why are you feeling this way?</h4>
   <div id="ten-countdown"></div>
+
   <div class="container-body">
     <div class="answers">
       <% if @mood == "happy" %>
@@ -21,14 +22,12 @@
             <p>I'm feeling creative.</p>
           </div>
         <% end %>
-          <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
-              <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
-              <%= hidden_field_tag 'mood', @mood %>
-              <input type="submit" value="Submit">
-            <% end %>
-          </div>
+          <button type="button" id="customAnswerButton" class="answer" data-toggle="modal" data-target="#customAnswerModal">
+            Write your own answer.
+          </button>
+
+
+
       <% elsif @mood == "angry" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -44,14 +43,10 @@
             <p>Not getting what I want or feeling frustrated.</p>
           </div>
         <% end %>
-          <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
-              <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
-              <%= hidden_field_tag 'mood', @mood %>
-              <input type="submit" value="Submit">
-            <% end %>
-          </div>
+          <button type="button" id="customAnswerButton" class="answer" data-toggle="modal" data-target="#customAnswerModal">
+            Write your own answer.
+          </button>
+
       <% elsif @mood == "neutral" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -67,14 +62,10 @@
             <p>I'm in a comfortable environment where I feel safe and content.</p>
           </div>
         <% end %>
-          <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
-              <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
-              <%= hidden_field_tag 'mood', @mood %>
-              <input type="submit" value="Submit">
-            <% end %>
-          </div>
+          <button type="button" id="customAnswerButton" class="answer" data-toggle="modal" data-target="#customAnswerModal">
+            Write your own answer.
+          </button>
+
       <% elsif @mood == "sad" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -90,14 +81,10 @@
             <p>Facing a difficult situation or change in my life.</p>
           </div>
         <% end %>
-          <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
-              <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
-              <%= hidden_field_tag 'mood', @mood %>
-              <input type="submit" value="Submit">
-            <% end %>
-          </div>
+          <button type="button" id="customAnswerButton" class="answer" data-toggle="modal" data-target="#customAnswerModal">
+            Write your own answer.
+          </button>
+
       <% elsif @mood == "devastated" %>
         <%= link_to student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "no-style" do %>
           <div class="answer" id="answer-1">
@@ -113,28 +100,46 @@
             <p>Witnessing something traumatic or upsetting.</p>
           </div>
         <% end %>
-          <div class="answer answer-input">
-            <%= form_tag student_activities_path(student_id: @student.id, activities: :index, mood: @mood), method: :GET do %>
-              <label for="custom_answer">Enter your own answer:</label><br>
-              <input type="text" id="custom_answer" name="custom_answer" class="journal-form"><br>
-              <%= hidden_field_tag 'mood', @mood %>
-              <input type="submit" value="Submit">
-            <% end %>
-          </div>
+          <button type="button" id="customAnswerButton" class="answer" data-toggle="modal" data-target="#customAnswerModal">
+            Write your own answer.
+          </button>
       <% end %>
     </div>
 
     <div id="canvas-container">
-      <h4>Draw here</h4>
+      <div class="canvas-top">
+        <div class="artist">
+        <h4>Draw here</h4>
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/tktuqxex.json"
+              trigger="loop"
+              delay="2000"
+              style="width:50px;height:50px;">
+          </lord-icon>
+        </div>
+      </div>
+
       <canvas class="canvas" data-canvas-target="myCanvas">
       </canvas>
     </div>
   </div>
 </div>
 
-
+<!-- Initial Popup Modal -->
+<div id="popup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <p>Enter your answer:</p>
+    <input type="text" id="customAnswerInput" class="form-control" placeholder="Type your answer...">
+    <%= link_to "Submit", student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "btn btn-primary" %>
+  </div>
+</div>
 
 <script>
+  // Wait for the DOM content to be fully loaded
+
+
   function countdown( elementName, minutes, seconds )
 {
     var element, endTime, hours, mins, msLeft, time;
@@ -164,5 +169,31 @@
 }
 
 countdown( "ten-countdown", 0, 10 );
+
+document.addEventListener("DOMContentLoaded", function() {
+
+});
+
+  let popup = document.getElementById("popup");
+  let customAnswerButton = document.getElementById("customAnswerButton");
+
+  // Bind click event to the "Add Custom Answer" button
+  customAnswerButton.addEventListener("click", function() {
+    displayPopup();
+  });
+
+  // Bind click event to the "Submit" link within the modal
+  document.getElementById("submitLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default action (navigation)
+    closePopup();
+  });
+
+ function displayPopup() {
+    popup.style.display = 'block';
+  }
+
+  function closePopup() {
+    popup.style.display = 'none';
+  }
 
 </script>
