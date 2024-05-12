@@ -1,5 +1,20 @@
 <h1>Classroom Detail</h1>
 
+<div class="arrow">
+  <%= link_to students_path(mood: "devastated", student_id: current_student.id), class: "arrow_image" do %>
+  <%= image_tag "arrow2.png" %>
+  <% end %>
+</div>
+
+<div class="title">
+  <h2>Classroom Details</h2>
+</div>
+
+<div class="description">
+  <p>Select one of the activities for you to do</p>
+</div>
+
+
 <div class="classroom d-flex justify-content-center">
   <table class="classroom-table table-bordered w-75 mt-5">
   <thead>
