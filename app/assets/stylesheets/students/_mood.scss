@@ -3,8 +3,26 @@
 }
 
 .emojis {
+  justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .card-link {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .card-link {
+    font-size: 20px; /* Further adjust font size for even smaller screens */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
