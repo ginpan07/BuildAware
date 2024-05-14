@@ -4,43 +4,47 @@
 
 h1 {
   color: #ffcb3d;
-  text-align: center;
+  text-align: start;
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
-  font-size: 70px;
+  font-size: 7vh;
   font-style: normal;
   -webkit-text-stroke: 2px black;
 }
 
 .container {
   justify-content: center;
-  background-color: #f2c18d;
-  border-radius: 20px;
-  border: 10px outset #f6f193;
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  outline: 2px solid black;
-  box-shadow: 0 0 0 1px black inset;
-  margin: 0;
+  max-height: 100%;
   min-width: 100%;
 }
 
-.container h4 {
-  color: #f6f193;
-  text-align: center;
+h4 {
+  color: #ffcb3d;
+  text-align: start;
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 4vh;
   font-style: normal;
   -webkit-text-stroke: 2px black;
+}
+
+h5 {
+  color: #ffcb3d;
+  text-align: start;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 300;
+  font-size: 2vh;
+  font-style: normal;
+  -webkit-text-stroke: 1px black;
 }
 
 .container-body {
   display: flex;
   flex-wrap: wrap; /* allow items to wrap */
   justify-content: space-between;
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .answer {
@@ -49,21 +53,20 @@ h1 {
   text-align: center;
   align-items: center;
   font-family: "Happy Monkey", cursive;
-  font-size: 18px;
-  min-height: 100px;
-  margin-top: 30px;
-  padding: 5px 10px; /* simplified padding */
+  font-size: 1.3vw;
+  height: 8vh;
+  margin-top: 7%;
+  margin-bottom: 0px;
   width: 100%; /* take full width on smaller screens */
-  border-radius: 10px;
-  border: 6px outset #d4d081;
+  border-radius: 40px;
+  border: 1px solid rgba(59, 159, 214, 0.2);
+  background: rgba(164, 163, 165, 0.5);
   font-weight: bold;
-  background-color: #f6f193;
-  outline: 2px solid black;
-  box-shadow: 0 0 0 1px black inset;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .answer:hover {
-  background-color: #d4d081;
+  background-color: #ffcb3d;
   border-style: inset;
 }
 
@@ -74,8 +77,9 @@ h1 {
 }
 
 .answers {
+  max-height: 80vh;
   width: 40%;
-  margin-left: 2%;
+  margin-top: 5%;
 }
 
 #canvas-container {
@@ -86,12 +90,10 @@ h1 {
 
 .canvas {
   background-color: white;
-  border: 10px outset #d4d081;
-  box-shadow: 0 0 0 1px black inset;
+  border: 1px solid rgba(59, 159, 214, 0.2);
   border-radius: 10px;
-  margin-right: 20px;
-  outline: 2px solid black;
   cursor: crosshair;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .no-style {
@@ -99,9 +101,6 @@ h1 {
   color: inherit;
 }
 
-body {
-  background-color: #c5ebaa;
-}
 
 .modal {
   display: none; /* Initially hide the modals */
@@ -135,4 +134,26 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.artist {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.icon-container {
+  margin-left: 15%;
+}
+
+.arrow .arrow_img{
+  margin-top: 0;
+  padding: 0;
+  max-height: 50%;
+  max-width: 50%;
+}
+
+
+body {
+  overflow: hidden;
 }
