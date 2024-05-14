@@ -18,8 +18,8 @@
 <div class="popup" id="popup">
 <br>
     <h2>Are you feeling better?</h2>
-    <button class=btn onclick="closePopup(true)">Yes</button>
-    <button class=btn onclick="closePopup(true)">No</button>
+    <button class=btn id="yes" onclick="closePopup(true)">Yes</button>
+    <button class=btn id="no" onclick="closePopup(true)">No</button>
 </div>
 <div class="popup" id="newPopup" style="display :none;">
             <h2>Thank You! Come back later for your check-in! </h2>
@@ -287,9 +287,10 @@
           </div>
 
   <% end %>
+  </div>
 </div>
-</div>
-<div id="popup-overlay"></div>
+
+<%# <div id="popup-overlay"></div> %>
 <div class="footer">
   <div id="countdown">5</div>
 </div>
@@ -349,7 +350,21 @@
                 window.location.href = "https://www.buildaware.xyz/students/sign_in";
             }
         }
+        var yesButton = document.getElementById('yes');
+        if (yesButton) {
+            yesButton.addEventListener('click', function() {
+                closePopup(true);
+            });
+        }
 
-        countdown("countdown", 10);
+        // Event listener for the No button
+        var noButton = document.getElementById('no');
+        if (noButton) {
+            noButton.addEventListener('click', function() {
+                closePopup(true);
+            });
+        }
+
+        countdown("countdown", 5);
     })();
 </script>
