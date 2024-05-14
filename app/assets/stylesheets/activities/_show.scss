@@ -117,7 +117,7 @@ body {
   width: 800px;
   height: 55vh;
   background: #c5ebaa;
-  border-radius: 6px;
+  border-radius: 35px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,22 +127,22 @@ body {
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
-  z-index: 999;
 }
 
 .popup button {
   width: 50%;
   margin-top: 50px;
   padding: 10px 0;
-  background: #04aa6d;
+  background: rgba(191, 127, 37, 0.5);
   color: #fff;
   border: 0;
   outline: none;
   font-size: 25px;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 9px #999;
   z-index: 999;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .close-popup,
@@ -172,9 +172,25 @@ body {
   display: none; /* Initially hidden */
 }
 
-.blur-background {
-  filter: blur(5px);
+@media screen and (max-width: 768px) {
+  .card-link {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .card-link {
+    font-size: 20px; /* Further adjust font size for even smaller screens */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+/* .blur-background {
+  filter: blur(5px);
+} */
 // #ten-countdown {
 //   font-family: sans-serif;
 //   width: 200px;
