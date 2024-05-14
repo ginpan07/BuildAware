@@ -33,17 +33,16 @@ export default class extends Controller {
     // Button to select color
     const colorButton = document.createElement("input");
     colorButton.type = "color";
-    colorButton.style.width = "9em";
-    colorButton.style.height = "3.3em";
+    colorButton.style.height = "8vh";
     colorButton.style.position = "relative";
-    colorButton.style.bottom = "3px";
+    colorButton.style.bottom = "0px";
     colorButton.style.margin = "10px";
-    colorButton.style.backgroundColor = "#f6f193";
-    colorButton.style.border = "6px outset #d4d081";
-    colorButton.style.borderRadius = "10px";
-    colorButton.style.outline = "2px solid black";
-    colorButton.style.boxShadow = "0 0 0 1px black inset";
+    colorButton.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
+    colorButton.style.border = "1px solid rgba(59, 159, 214, 0.2)";
+    colorButton.style.borderRadius = "50px";
+    colorButton.style.boxShadow = "10px 10px 5px lightblue";
     colorButton.style.verticalAlign = "middle";
+    colorButton.style.overflow = "hidden";
     colorButton.value = "#000"; // Default color is black
     colorButton.addEventListener("change", (e) => {
       this.selectedColor = e.target.value;
@@ -55,16 +54,15 @@ export default class extends Controller {
     brushSizeButton.type = "number";
     brushSizeButton.style.fontFamily = "Happy Monkey, cursive";
     brushSizeButton.style.textAlign = "center";
-    brushSizeButton.style.fontSize = "18px";
+    brushSizeButton.style.fontSize = "1.3vw";
     brushSizeButton.style.fontWeight = "bold";
-    brushSizeButton.style.width = "8em";
-    brushSizeButton.style.height = "3em";
+    //brushSizeButton.style.width = "8em";
+    brushSizeButton.style.height = "8vh";
     brushSizeButton.style.margin = "10px";
-    brushSizeButton.style.backgroundColor = "#f6f193";
-    brushSizeButton.style.border = "6px outset #d4d081";
-    brushSizeButton.style.borderRadius = "10px";
-    brushSizeButton.style.outline = "2px solid black";
-    brushSizeButton.style.boxShadow = "0 0 0 1px black inset";
+    brushSizeButton.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
+    brushSizeButton.style.border = "1px solid rgba(59, 159, 214, 0.2)";
+    brushSizeButton.style.borderRadius = "40px";
+    brushSizeButton.style.boxShadow = "10px 10px 5px lightblue";
     brushSizeButton.min = 1;
     brushSizeButton.max = 100;
     brushSizeButton.value = this.brushSize;
@@ -148,28 +146,26 @@ export default class extends Controller {
     button.textContent = text;
     button.classList.add("canvas-button");
     button.style.fontFamily = "Happy Monkey, cursive";
-    button.style.fontSize = "18px";
+    button.style.fontSize = "1.3vw";
     button.style.fontWeight = "bold";
-    button.style.width = "8em";
-    button.style.height = "3em";
+    //button.style.width = "8em";
+    button.style.height = "8vh";
     button.style.margin = "10px";
-    button.style.backgroundColor = "#f6f193";
-    button.style.border = "6px outset #d4d081";
-    button.style.borderRadius = "10px";
-    button.style.outline = "2px solid black";
-    button.style.boxShadow = "0 0 0 1px black inset";
+    button.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
+    button.style.border = "1px solid rgba(59, 159, 214, 0.2)";
+    button.style.borderRadius = "40px";
+    button.style.boxShadow = "10px 10px 5px lightblue";
 
     button.addEventListener("mouseenter", function() {
-      button.style.backgroundColor = "#d4d081";
+      button.style.backgroundColor = "#ffcb3d";
       button.style.borderStyle = "inset";
     });
 
     button.addEventListener("mouseleave", function() {
-      button.style.backgroundColor = "#f6f193";
-      button.style.border = "6px outset #d4d081";
-      button.style.borderRadius = "10px";
-      button.style.outline = "2px solid black";
-      button.style.boxShadow = "0 0 0 1px black inset";
+      button.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
+      button.style.border = "1px solid rgba(59, 159, 214, 0.2)";
+      button.style.borderRadius = "40px";
+      button.style.boxShadow = "10px 10px 5px lightblue";
     });
 
     return button;
