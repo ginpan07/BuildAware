@@ -1,25 +1,30 @@
+<div id="moodChart" style="width: 100%;">
+  <script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-<script>
-  google.charts.load('current', { packages: ['corechart'] });
-  google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Mood', 'Count'],
+        <% @mood_summary.each do |mood, count| %>
+          ['<%= mood %>', <%= count %>],
+        <% end %>
+      ]);
 
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Mood', 'Count'],
-      <% @mood_summary.each do |mood, count| %>
-        ['<%= mood %>', <%= count %>],
-      <% end %>
-    ]);
+      var options = {
+        title: 'Mood Summary',
+        pieHole: 0.4,
+        // backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: { fill:'transparent' },
+        width: 600,
+        height: 600
+      };
 
-    var options = {
-      title: 'Mood Summary',
-      pieHole: 0.4,
-    };
+      var chart = new google.visualization.PieChart(document.getElementById('moodChart'));
 
-    var chart = new google.visualization.PieChart(document.getElementById('moodChart'));
+      chart.draw(data, options);
+    }
+  </script>
 
-    chart.draw(data, options);
-  }
-</script>
 
-<div id="moodChart" style="width: 100%; height: 400px;"></div>
+</div>
