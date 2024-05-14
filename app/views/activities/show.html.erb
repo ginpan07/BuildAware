@@ -204,7 +204,7 @@
               style="width:500px;height:500px">
         </div>
 
-  <% elsif @activity.description == "Take 10 calm belly breaths" %>
+  <% elsif @activity.description == "Take 10 calm belly breathes" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -214,7 +214,7 @@
               style="width:500px;height:500px">
             </div>
 
-  <% elsif @activity.description == "Draw/Write sadness on a piece of paper" %>
+  <% elsif @activity.description == "Draw/Write sadness on a piece of paper!" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -224,7 +224,7 @@
               style="width:500px;height:500px">
             </div>
 
-  <% elsif @activity.description == "Listen to a music" %>
+  <% elsif @activity.description == "Listen to music!" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -289,55 +289,67 @@
   <% end %>
 </div>
 </div>
-
+<div id="popup-overlay"></div>
 <div class="footer">
-  <div id="countdown">30</div>
+  <div id="countdown">5</div>
 </div>
 
 
 <script>
-    function countdown(elementName, seconds) {
-        var element, endTime, timeLeft;
+    (function() {
+        function countdown(elementName, seconds) {
+            var element, endTime, timeLeft;
 
-        function twoDigits(n) {
-            return (n <= 9 ? "0" + n : n);
+            function twoDigits(n) {
+                return (n <= 9 ? "0" + n : n);
+            }
+
+            function updateTimer() {
+                var msLeft = endTime - (+new Date);
+                if (msLeft < 0) {
+                    closePopup();
+                } else {
+                    timeLeft = new Date(msLeft);
+                    var secs = Math.floor((msLeft / 1000) % 60);
+                    element.innerHTML = twoDigits(secs);
+                    setTimeout(updateTimer, 1000);
+                }
+            }
+
+            element = document.getElementById(elementName);
+            endTime = (+new Date) + 1000 * seconds;
+            updateTimer();
         }
 
-        function updateTimer() {
-            var msLeft = endTime - (+new Date);
-            if (msLeft < 0 || document.getElementById('popup').style.display === 'block') {
-                closePopup();
-            } else {
-                timeLeft = new Date(msLeft);
-                var secs = Math.floor((msLeft / 1000) % 60);
-                element.innerHTML = twoDigits(secs);
-                setTimeout(updateTimer, 1000);
+        function displayPopup() {
+            var popup = document.getElementById('popup');
+            if (popup) {
+                popup.style.display = 'block';
             }
         }
 
-        element = document.getElementById(elementName);
-        endTime = (+new Date) + 1000 * seconds;
-        updateTimer();
-    }
+        function closePopup(feelingBetter) {
+            var popup = document.getElementById('popup');
+            if (popup) {
+                popup.classList.add("close-popup");
+            }
+            if (feelingBetter) {
+                var newPopup = document.getElementById('newPopup');
+                if (newPopup) {
+                    newPopup.style.display = 'block';
+                    newPopup.classList.add("closeNew-popup");
+                }
+            }
+        }
 
-    let popup = document.getElementById("popup");
+        function closeNewPopup() {
+            var newPopup = document.getElementById('newPopup');
+            if (newPopup) {
+                newPopup.style.display = 'none';
+                window.location.href = "https://www.buildaware.xyz/students/sign_in";
+            }
+        }
 
-    function displayPopup() {
-        document.getElementById('popup').style.display = 'block';
-    }
-
-    function closePopup(feelingBetter) {
-    popup.classList.add("close-popup");
-    if (feelingBetter) {
-        document.getElementById('newPopup').style.display = 'block';
-        document.getElementById('newPopup').classList.add("closeNew-popup");
-    }
-}
-
-    function closeNewPopup() {
-        document.getElementById('newPopup').style.display = 'none';
-        window.location.href = "https://www.buildaware.xyz/students/sign_in"
-    }
-
-    //countdown("countdown", 5);
+        countdown("countdown", 10);
+    })();
 </script>
