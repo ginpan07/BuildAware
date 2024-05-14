@@ -114,10 +114,11 @@ body {
 } */
 
 .popup {
+  justify-content: center;
   width: 800px;
-  height: 35vh;
-  background: rgba(253, 252, 251, 0.5);
-  border-radius: 6px;
+  height: 55vh;
+  background: url("background4.png");
+  border-radius: 35px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,6 +128,7 @@ body {
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .popup button {
@@ -148,12 +150,52 @@ body {
 .close-popup,
 .closeNew-popup {
   visibility: visible;
-  top: 55vh;
+  top: 52%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 999;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
+.activity {
+  border: 1px solid lightblue;
+  box-shadow: 20px 17px 18px lightblue;
+  border-radius: 19%;
+  margin-top: 69px;
+  margin-bottom: 50px;
+}
+
+
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 100; /* Ensure the overlay appears above other elements */
+  display: none; /* Initially hidden */
+}
+
+@media screen and (max-width: 768px) {
+  .card-link {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .card-link {
+    font-size: 20px; /* Further adjust font size for even smaller screens */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* .blur-background {
+  filter: blur(5px);
+} */
 // #ten-countdown {
 //   font-family: sans-serif;
 //   width: 200px;

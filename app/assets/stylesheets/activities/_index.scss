@@ -37,7 +37,8 @@
 
 .card-link:hover{
   border-style: inset;
-  background-color: #ffcb3d;
+  background-color: #e7e7e786;
+
 }
 
 /* Media query for smaller screens */
@@ -62,8 +63,8 @@
   width: auto; /* Set the width of the image */
   height: auto;
   display: flex;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 40px;
   margin-left: 20px;
 }
 
@@ -82,4 +83,5 @@
 .description {
   display:flex;
   margin-left: 20px;
+  font-size: 20px;
 }

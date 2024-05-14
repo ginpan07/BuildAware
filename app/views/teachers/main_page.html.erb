@@ -13,4 +13,6 @@
       </div>
     </a>
   <% end %>
+
+  <%= link_to "logout",  destroy_teacher_session_path, data: { turbo_method: :delete } %> 
 </div>

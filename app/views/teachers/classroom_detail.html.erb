@@ -1,7 +1,21 @@
-<h1>Classroom Detail</h1>
+<div class="arrow">
+  <%= link_to  mood_summary_teacher_classroom_path(@classroom), class: "arrow_image" do %>
+  <%= image_tag "arrow2.png" %>
+  <% end %>
+</div>
 
-<div class="classroom d-flex justify-content-center">
-  <table class="classroom-table table-bordered w-75 mt-5">
+<div class="title">
+  <h2><strong><%= @classroom.name %></strong>'s class details</h2>
+</div>
+
+<div class="description">
+  <p>View all student moods and activities</p>
+</div>
+
+
+
+<div class="classroom table-responsive d-flex justify-content-center">
+  <table class="classroom-table w-75 mt-5">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,23 +31,23 @@
         <td><%= student.name %></td>
         <td><%= student.age %></td>
         <td>
-          <% student.student_moods.last(2).each do |mood| %>
+          <% student.student_moods.last(1).each do |mood| %>
             <p><%= mood.mood.mood %></p>
           <% end %>
 
         </td>
         <td>
-          <% student.student_moods.last(2).each do |student_mood| %>
+          <% student.student_moods.last(1).each do |student_mood| %>
             <p><%= student_mood.created_at.strftime('%A, %Y-%m-%d %H:%M:%S') %></p>
           <% end %>
         </td>
         <td>
-          <% student.student_activities.last(2).each do |activity| %>
+          <% student.student_activities.last(1).each do |activity| %>
             <p><%= activity.activity.description %></p>
           <% end %>
         </td>
         <td >
-          <% student.student_activities.last(2).each do |student_activity| %>
+          <% student.student_activities.last(1).each do |student_activity| %>
             <p><%= student_activity.created_at.strftime('%A, %Y-%m-%d %H:%M:%S')  %></p>
           <% end %>
         </td>
@@ -43,6 +57,7 @@
   </table>
 </div>
 
+<!--
 <div class="mt-3">
     <%= link_to "Back to Mood Summary", mood_summary_teacher_classroom_path(@classroom), class: "btn btn-primary" %>
- </div>
+ </div>-->
