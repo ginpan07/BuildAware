@@ -114,9 +114,10 @@ body {
 } */
 
 .popup {
+  justify-content: center;
   width: 800px;
   height: 55vh;
-  background: #c5ebaa;
+  background: url("background4.png");
   border-radius: 35px;
   position: absolute;
   top: 50%;
@@ -127,6 +128,7 @@ body {
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
+  box-shadow: 10px 10px 5px lightblue;
 }
 
 .popup button {
@@ -190,6 +192,7 @@ body {
     margin-right: 20px;
   }
 }
+
 /* .blur-background {
   filter: blur(5px);
 } */
