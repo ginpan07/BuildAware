@@ -4,17 +4,17 @@
   font-size: 20px;
   font-family: sans-serif;
   min-width: 400px;
-  box-shadow: 20px 20px 9px rgba(0, 0, 0, 0.45);
-  background-color: rgb(255, 255, 255);
+  box-shadow: 20px 15px 22px lightblue;
 }
 
 .classroom-table td {
-  font-size: 15px;
+  font-size: 17px;
 }
+
 .classroom-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: center;
+  background-color: #d2d5d7;
+  color: #7a4848;
+  text-align: center
 }
 
 .classroom-table th,
@@ -23,11 +23,7 @@
 }
 
 .classroom-table tbody tr {
-  border-bottom: 1px solid #057861;
-}
-
-.classroom-table tbody tr:nth-of-type(even) {
-  //background-color: #ffffff;
+  border-bottom: 1px solid #057678;
 }
 
 .classroom-table tbody tr:last-of-type {
@@ -39,4 +35,23 @@
   color: #009879;
 }
 
-tr:hover {background-color: rgb(96, 191, 128);}
+tr:hover {background-color: #e7e7e786;;}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .classroom-table{
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .classroom-table {
+    font-size: 20px; /* Further adjust font size for even smaller screens */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
