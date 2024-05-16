@@ -1,6 +1,21 @@
+.container {
+  justify-content: center;
+  max-height: 100%;
+  min-width: 100%;
+}
+
+.container-body {
+  display: flex;
+  justify-content: center;
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .classroom-table {
+  height: 7vh;
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: 25px;
   font-size: 20px;
   font-family: sans-serif;
   min-width: 400px;
@@ -10,6 +25,18 @@
 
 .classroom-table td {
   font-size: 17px;
+}
+
+.arrow {
+  height: 1vh;
+}
+
+// .title {
+//   height: 1vh;
+// }
+
+.description {
+  height: 1vh;
 }
 
 .classroom-table thead tr {
@@ -40,19 +67,17 @@ tr:hover {background-color: #e7e7e786;;}
 
 
 /* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-  .classroom-table{
-    font-size: 24px; /* Adjust font size for smaller screens */
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .classroom-table{
+//     font-size: 12px; /* Adjust font size for smaller screens */
+//     margin: 25px 50px 50px; /* Adjust margin for smaller screens */
+//   }
+// }
 
-/* Media query for even smaller screens */
-@media screen and (max-width: 480px) {
-  .classroom-table {
-    font-size: 20px; /* Further adjust font size for even smaller screens */
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
+// /* Media query for even smaller screens */
+// @media screen and (max-width: 480px) {
+//   .classroom-table{
+//     font-size: 8px; /* Further adjust font size for even smaller screens */
+//     margin: 25px 50px 50px; /* Adjust margin for smaller screens */
+//   }
+// }
