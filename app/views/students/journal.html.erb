@@ -1,4 +1,8 @@
-
+<div class="arrow">
+  <%= link_to students_moods_path(student_id: current_student.id), class: "arrow_image" do %>
+  <%= image_tag "arrow2.png" %>
+  <% end %>
+</div>
 
 <h1>Journal</h1>
 
@@ -130,51 +134,51 @@
 
 <!-- Initial Popup Modal -->
 <div id="popup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup()">&times;</span>
+  <div class="modal-content popup-journal">
+    <span class="close" onclick="closePopup()"></span>
     <p>Enter your answer:</p>
-    <input type="text" id="customAnswerInput" class="form-control" placeholder="Type your answer...">
-    <%= link_to "Submit", student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "btn btn-primary" %>
+    <textarea id="customAnswerInput" class="form-control" placeholder="Type your answer..."></textarea>
+    <%= link_to "Submit", student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "btn btn-primary btn-journal-popup" %>
   </div>
 </div>
 
-<%# <script>
+<script>
   // Wait for the DOM content to be fully loaded
 
 
-  function countdown( elementName, minutes, seconds )
-{
-    var element, endTime, hours, mins, msLeft, time;
+//   function countdown( elementName, minutes, seconds )
+// {
+//     var element, endTime, hours, mins, msLeft, time;
 
-    function twoDigits( n )
-    {
-        return (n <= 9 ? "0" + n : n);
-    }
+//     function twoDigits( n )
+//     {
+//         return (n <= 9 ? "0" + n : n);
+//     }
 
-    function updateTimer()
-    {
-        msLeft = endTime - (+new Date);
-        if ( msLeft < 1000 ) {
-            element.innerHTML = "Time is up!";
-        } else {
-            time = new Date( msLeft );
-            hours = time.getUTCHours();
-            mins = time.getUTCMinutes();
-            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
-            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
-        }
-    }
+//     function updateTimer()
+//     {
+//         msLeft = endTime - (+new Date);
+//         if ( msLeft < 1000 ) {
+//             element.innerHTML = "Time is up!";
+//         } else {
+//             time = new Date( msLeft );
+//             hours = time.getUTCHours();
+//             mins = time.getUTCMinutes();
+//             element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+//             setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+//         }
+//     }
 
-    element = document.getElementById( elementName );
-    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
-    updateTimer();
-}
+//     element = document.getElementById( elementName );
+//     endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+//     updateTimer();
+// }
 
-countdown( "ten-countdown", 0, 10 );
+// countdown( "ten-countdown", 0, 10 );
 
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
-});
+// });
 
   let popup = document.getElementById("popup");
   let customAnswerButton = document.getElementById("customAnswerButton");
@@ -198,4 +202,4 @@ document.addEventListener("DOMContentLoaded", function() {
     popup.style.display = 'none';
   }
 
-</script> %>
+</script>
