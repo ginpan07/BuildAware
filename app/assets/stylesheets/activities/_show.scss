@@ -68,7 +68,7 @@ body {
 
 #countdown {
   width: 170px;
-  height: 170px;
+  height: 50%;
   font-family: "Archivo Black", cursive;
   font-size: 6rem;
   padding: 10px;
@@ -116,7 +116,7 @@ body {
 .popup {
   justify-content: center;
   width: 800px;
-  height: 35vh;
+  height: 45%;
   background: url("background4.png");
   border-radius: 35px;
   position: absolute;
@@ -154,6 +154,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   z-index: 999;
   padding-top: 100px;
+  padding: 10px;
 }
 
 .activity {
