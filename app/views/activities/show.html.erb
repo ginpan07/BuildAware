@@ -23,7 +23,7 @@
 </div>
 <div class="popup" id="newPopup" style="display :none;">
             <h2>Thank You! Come back later for your check-in! </h2>
-            <button class="btn" href="students/moods" onclick="closeNewPopup()">Close</button>
+            <button class="btn" id="close" href="students/moods" onclick="closeNewPopup()">Close</button>
         </div>
 </div>
 <div class="container-count">
@@ -204,17 +204,17 @@
               style="width:500px;height:500px">
         </div>
 
-  <% elsif @activity.description == "Take 10 calm belly breathes" %>
+  <% elsif @activity.description == "Take 10 calm belly breaths" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <lord-icon
-            src="https://cdn.lordicon.com/xvhlktlr.json"
-            trigger="loop"
-            delay="1000"
-              style="width:500px;height:500px">
-            </div>
+      <lord-icon
+        src="https://cdn.lordicon.com/zdvajlff.json"
+        trigger="loop"
+        delay="2000"
+        style="width:500px;height:500px">
+        </div>
 
-  <% elsif @activity.description == "Draw/Write sadness on a piece of paper!" %>
+  <% elsif @activity.description == "Draw/Write sadness on a piece of paper" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -224,7 +224,7 @@
               style="width:500px;height:500px">
             </div>
 
-  <% elsif @activity.description == "Listen to music!" %>
+  <% elsif @activity.description == "Listen to a music" %>
    <div class="activity">
      <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
@@ -347,7 +347,7 @@
             var newPopup = document.getElementById('newPopup');
             if (newPopup) {
                 newPopup.style.display = 'none';
-                window.location.href = "https://www.buildaware.xyz/students/sign_in";
+
             }
         }
         var yesButton = document.getElementById('yes');
@@ -365,6 +365,12 @@
             });
         }
 
+        var closeButton = document.getElementById('close');
+        if (closeButton) {
+          closeButton.addEventListener('click', function() {
+            window.location.href = "https://www.buildaware.xyz/students/sign_in";
+          });
+        }
         countdown("countdown", 5);
     })();
 </script>
