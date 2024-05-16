@@ -5,26 +5,35 @@
 
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ['Mood', 'Count'],
-        <% @mood_summary.each do |mood, count| %>
-          ['<%= mood %>', <%= count %>],
+        ['Mood', 'Percentage', { role: 'style' }],
+        <% shades_of_blue = ['#1E90FF', '#4682B4', '#5F9EA0', '#6495ED', '#00BFFF', '#87CEEB', '#87CEFA', '#B0E0E6'] %>
+        <% total_count = @mood_summary.values.sum %>
+        <% @mood_summary.each_with_index do |(mood, count), index| %>
+          ['<%= mood %>', <%= (count.to_f / total_count * 100).round(2) %>, '<%= shades_of_blue[index % shades_of_blue.length] %>'],
         <% end %>
       ]);
 
       var options = {
         title: 'Mood Summary',
-        pieHole: 0.4,
-        // backgroundColor: 'rgba(0,0,0,0)',
-        backgroundColor: { fill:'transparent' },
+        backgroundColor: { fill: 'transparent' },
         width: 600,
-        height: 600
+        height: 600,
+        legend: { position: 'none' },
+        hAxis: {
+          title: 'Mood',
+          titleTextStyle: { color: '#333' }
+        },
+        vAxis: {
+          title: 'Percentage',
+          minValue: 0,
+          titleTextStyle: { color: '#333' },
+          format: 'decimal'
+        }
       };
 
-      var chart = new google.visualization.PieChart(document.getElementById('moodChart'));
+      var chart = new google.visualization.ColumnChart(document.getElementById('moodChart'));
 
       chart.draw(data, options);
     }
   </script>
-
-
 </div>
