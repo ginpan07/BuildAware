@@ -153,6 +153,52 @@ h5 {
   max-width: 50%;
 }
 
+.close {
+  background-image: url('redcross.png');
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 5vw; /* Adjust width and height according to your image size */
+  height: 5vh;
+  background-size: 100%;
+  padding: 5%;
+  cursor: pointer;
+}
+
+.popup-journal {
+  font-family: "Happy Monkey", cursive;
+  font-size: 1.5vw;
+  justify-content: center;
+  align-items: center;
+  width: 55vw;
+  height: 55vh;
+  background: url("background4.png");
+  border-radius: 35px;
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  border: 1px solid rgba(59, 159, 214, 0.2);
+  transition: transform 0.4s, top 0.4s;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.btn-journal-popup {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Happy Monkey", cursive;
+  color: black;
+  height: 6vh;
+  margin-top: 7%;
+  margin-bottom: 0px;
+  width: 30%;
+  border-radius: 40px;
+  border: 1px solid rgba(59, 159, 214, 0.2);
+  background: rgba(164, 163, 165, 0.5);
+  font-weight: bold;
+  box-shadow: 10px 10px 5px lightblue;
+}
 
 body {
   overflow: hidden;

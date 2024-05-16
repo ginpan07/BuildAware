@@ -34,6 +34,7 @@ export default class extends Controller {
     const colorButton = document.createElement("input");
     colorButton.type = "color";
     colorButton.style.height = "8vh";
+    colorButton.style.width = "8em";
     colorButton.style.position = "relative";
     colorButton.style.bottom = "0px";
     colorButton.style.margin = "10px";
@@ -56,7 +57,7 @@ export default class extends Controller {
     brushSizeButton.style.textAlign = "center";
     brushSizeButton.style.fontSize = "1.3vw";
     brushSizeButton.style.fontWeight = "bold";
-    //brushSizeButton.style.width = "8em";
+    brushSizeButton.style.width = "8em";
     brushSizeButton.style.height = "8vh";
     brushSizeButton.style.margin = "10px";
     brushSizeButton.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
@@ -148,7 +149,7 @@ export default class extends Controller {
     button.style.fontFamily = "Happy Monkey, cursive";
     button.style.fontSize = "1.3vw";
     button.style.fontWeight = "bold";
-    //button.style.width = "8em";
+    button.style.width = "8em";
     button.style.height = "8vh";
     button.style.margin = "10px";
     button.style.backgroundColor = "rgba(164, 163, 165, 0.5)";
