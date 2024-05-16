@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
+
 .container-lord {
   display: flex;
   justify-content: center;
@@ -56,11 +57,11 @@ body {
 .container-count {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  //box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  //flex-direction: column;
   width: 100%;
   max-width: 650px; /* Adjust maximum width as needed */
   margin: 0 auto; /* Center the container horizontally */
@@ -160,8 +161,8 @@ body {
   border: 1px solid lightblue;
   box-shadow: 20px 17px 18px lightblue;
   border-radius: 19%;
-  margin-top: 69px;
-  margin-bottom: 50px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #popup-overlay {
