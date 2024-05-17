@@ -43,12 +43,37 @@
 }
 
 .name{
-  animation: fadeIn2 10s;
+  animation: fadeIn2 7s;
 }
 
-.line {
-  animation: fadeIn3 5s;
+.feeling {
+  animation: fadeIn 15s;
 }
+
+// .first {
+//   animation: fadeIn 20s;
+// }
+
+// .second {
+//   animation: fadeIn2 25s;
+// }
+
+// .third {
+//   animation: fadeIn 30s;
+// }
+
+// .fourth {
+//   animation: fadeIn 35s;
+// }
+
+// .fifth {
+//   animation: fadeIn 40s;
+// }
+
+// .last {
+//   animation: fadeIn 45s;
+// }
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
