@@ -1,0 +1,52 @@
+.teacher-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  flex-direction: column;
+}
+
+.card-deck {
+  min-width: fit-content;
+  margin: 30px;
+  padding: 10px;
+}
+
+.classroom-card {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 10px;
+  border: 1px solid rgba(59, 159, 214, 0.2);
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Happy Monkey", cursive;
+  font-size: 1.5vw;
+  height: 8vh;
+  min-width: -webkit-fill-available;
+  max-width: -webkit-fill-available;
+  font-weight: bold;
+  background: rgba(164, 163, 165, 0.5);
+  // #FFF1DE (255,241,222)
+  box-shadow: 10px 10px 5px rgb(220, 240, 247);
+  margin: 20px;
+  padding: 20px;
+}
+
+
+.arrow {
+  width: 5vw; /* Set the width of the image */
+  height: 5vh;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.arrow img {
+  width: 50px;
+  height: auto;
+}
