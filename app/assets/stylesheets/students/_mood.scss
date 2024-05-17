@@ -28,9 +28,63 @@
 }
 
 .welcome {
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .h1 {
   justify-content: center;
+}
+
+.welcome h2{
+  animation: fadeIn 5s;
+}
+
+.name{
+  animation: fadeIn2 7s;
+}
+
+.feeling {
+  animation: fadeIn 15s;
+}
+
+// .first {
+//   animation: fadeIn 20s;
+// }
+
+// .second {
+//   animation: fadeIn2 25s;
+// }
+
+// .third {
+//   animation: fadeIn 30s;
+// }
+
+// .fourth {
+//   animation: fadeIn 35s;
+// }
+
+// .fifth {
+//   animation: fadeIn 40s;
+// }
+
+// .last {
+//   animation: fadeIn 45s;
+// }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn2 {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn3 {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
