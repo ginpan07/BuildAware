@@ -22,7 +22,7 @@
     <button class=btn id="no" onclick="closePopup(true)">No</button>
 </div>
 <div class="popup" id="newPopup" style="display :none;">
-            <h2>Thank You! Come back later for your check-in! </h2>
+            <h2>Thank You, <%= current_student.name %> </h2>
             <button class="btn" id="close" href="students/moods" onclick="closeNewPopup()">Close</button>
         </div>
 </div>

@@ -25,7 +25,7 @@ end
 10.times do
   classroom = Classroom.new(
     teacher_id: 1,
-    name: Faker::Name.first_name
+    name: Faker::Music.genre
   )
 
   if classroom.save
@@ -86,11 +86,14 @@ devastated = Mood.new(mood: "devastated")
 devastated.save
 
 StudentMood.create(student_id: 1, mood_id: 1)
-StudentMood.create(student_id: 1, mood_id: 1)
 StudentMood.create(student_id: 2, mood_id: 2)
 StudentMood.create(student_id: 3, mood_id: 3)
 StudentMood.create(student_id: 4, mood_id: 4)
 StudentMood.create(student_id: 5, mood_id: 5)
+StudentMood.create(student_id: Student.find(6).id, mood_id: 2)
+StudentMood.create(student_id: Student.find(7).id, mood_id: 4)
+StudentMood.create(student_id: Student.find(8).id, mood_id: 2)
+StudentMood.create(student_id: Student.find(9).id, mood_id: 4)
 
 # Happy - done
 Activity.create(description: "Hug your best friend!", mood: happy.mood)
@@ -127,15 +130,15 @@ Activity.create(description: "Hug a teddy bear/someone you like", mood: devastat
 Activity.create(description: "Draw anything on a piece of paper", mood: devastated.mood)
 Activity.create(description: "Write down your feelings", mood: devastated.mood)
 
-# StudentActivity.create(student_id: Student.first.id, activity_id: Activity.first.id)
-# StudentActivity.create(student_id: Student.second.id, activity_id: Activity.second.id)
-# StudentActivity.create(student_id: Student.third.id, activity_id: Activity.third.id)
-# StudentActivity.create(student_id: Student.fourth.id, activity_id: Activity.fourth.id)
-# StudentActivity.create(student_id: Student.fifth.id, activity_id: Activity.fifth.id)
-# StudentActivity.create(student_id: Student.find(6).id, activity_id: Activity.find(6).id)
-# StudentActivity.create(student_id: Student.find(7).id, activity_id: Activity.find(7).id)
-# StudentActivity.create(student_id: Student.find(8).id, activity_id: Activity.find(8).id)
-# StudentActivity.create(student_id: Student.find(9).id, activity_id: Activity.find(9).id)
+StudentActivity.create(student_id: Student.first.id, activity_id: Activity.first.id)
+StudentActivity.create(student_id: Student.second.id, activity_id: Activity.second.id)
+StudentActivity.create(student_id: Student.third.id, activity_id: Activity.third.id)
+StudentActivity.create(student_id: Student.fourth.id, activity_id: Activity.fourth.id)
+StudentActivity.create(student_id: Student.fifth.id, activity_id: Activity.fifth.id)
+StudentActivity.create(student_id: Student.find(6).id, activity_id: Activity.find(6).id)
+StudentActivity.create(student_id: Student.find(7).id, activity_id: Activity.find(7).id)
+StudentActivity.create(student_id: Student.find(8).id, activity_id: Activity.find(8).id)
+StudentActivity.create(student_id: Student.find(9).id, activity_id: Activity.find(9).id)
 # StudentActivity.create(student_id: Student.find(10).id, activity_id: Activity.find(10).id)
 # StudentActivity.create(student_id: Student.find(1).id, activity_id: Activity.find(11).id)
 # StudentActivity.create(student_id: Student.find(2).id, activity_id: Activity.find(12).id)
