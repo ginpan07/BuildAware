@@ -14,8 +14,8 @@
   <h5>Select one of the activities for you to do</h5>
 </div>
 
-<div class="activity-container">
-  <div class="ccontainer">
+<div class="index-container">
+  <div class="activity-container">
     <% @activities.each do |activity| %>
       <div class="activity-card">
         <%= link_to student_activity_path(current_student.id, activity.id), class: "card-link" do %>
