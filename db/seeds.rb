@@ -9,16 +9,11 @@
 #   end
 require "faker"
 
-# Create a Classroom instance
-teacher = Teacher.create!(
+teacher = Teacher.new(
   name: Faker::Name.first_name,
   email: Faker::Internet.email,
   password: '123456',
   role: 'teacher'
-)
-classroom = Classroom.create!(
-  teacher: teacher,
-  name: Faker::Name.first_name
 )
 
 if teacher.save
@@ -26,6 +21,36 @@ if teacher.save
 else
   puts "Error creating user: #{teacher.errors.full_messages}"
 end
+
+10.times do
+  classroom = Classroom.new(
+    teacher_id: 1,
+    name: Faker::Name.first_name
+  )
+
+  if classroom.save
+    puts "Classroom created with name: #{classroom.name}"
+  else
+    puts "Error creating user: #{classroom.errors.full_messages}"
+  end
+end
+# Create a Classroom instance
+# teacher = Teacher.create!(
+#   name: Faker::Name.first_name,
+#   email: Faker::Internet.email,
+#   password: '123456',
+#   role: 'teacher'
+# )
+# classroom = Classroom.create!(
+#   teacher: teacher,
+#   name: Faker::Name.first_name
+# )
+
+# if teacher.save
+#   puts "Teacher created with email: #{teacher.email}"
+# else
+#   puts "Error creating user: #{teacher.errors.full_messages}"
+# end
 # puts classroom
 # Create Student instances associated with the Classroom
 
@@ -35,7 +60,7 @@ end
     age: rand(6..12),
     email: Faker::Internet.email,
     password: '123456',
-    classroom_id: classroom.id,
+    classroom_id: 1,
     role: 'student'
   )
 
