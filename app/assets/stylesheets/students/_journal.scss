@@ -160,8 +160,8 @@ h5 {
   right: 5%;
   width: 5vw; /* Adjust width and height according to your image size */
   height: 5vh;
-  background-size: 100%;
-  padding: 5%;
+  background-size:cover;
+  padding: 10%;
   cursor: pointer;
 }
 
@@ -198,4 +198,8 @@ h5 {
   background: rgba(164, 163, 165, 0.5);
   font-weight: bold;
   box-shadow: 10px 10px 5px lightblue;
+}
+
+#lock-scroll {
+  overflow: hidden;
 }
