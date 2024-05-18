@@ -22,7 +22,7 @@ else
   puts "Error creating user: #{teacher.errors.full_messages}"
 end
 
-10.times do
+6.times do
   classroom = Classroom.new(
     teacher_id: 1,
     name: Faker::Music.genre
