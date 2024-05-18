@@ -2,6 +2,7 @@
   justify-content: center;
   max-height: 100%;
   min-width: 100%;
+  overflow-y: auto;
 }
 
 .classroom-container-body {
@@ -13,14 +14,16 @@
 }
 
 .classroom-table {
-  height: 7vh;
+  height: 70vh;
   border-collapse: collapse;
   margin: 25px;
   font-size: 20px;
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 20px 15px 22px lightblue;
-  border: 1px solid #cad;
+  border: 1px solid rgb(170, 181, 221);
+  display: block;
+  overflow-y:auto;
 }
 
 .classroom-table td {
@@ -28,15 +31,11 @@
 }
 
 .arrow {
-  height: 1vh;
+  height: 0.5vh;
 }
 
-// .title {
-//   height: 1vh;
-// }
-
 .description {
-  height: 1vh;
+  height: 0.5h;
 }
 
 .classroom-table thead tr {
@@ -64,20 +63,3 @@
 }
 
 tr:hover {background-color: #e7e7e786;;}
-
-
-/* Media query for smaller screens */
-// @media screen and (max-width: 768px) {
-//   .classroom-table{
-//     font-size: 12px; /* Adjust font size for smaller screens */
-//     margin: 25px 50px 50px; /* Adjust margin for smaller screens */
-//   }
-// }
-
-// /* Media query for even smaller screens */
-// @media screen and (max-width: 480px) {
-//   .classroom-table{
-//     font-size: 8px; /* Further adjust font size for even smaller screens */
-//     margin: 25px 50px 50px; /* Adjust margin for smaller screens */
-//   }
-// }

@@ -1,9 +1,17 @@
-<div id="mood_summary">
+<div id="mood_summary" style="display: flex; justify-content: center;">
     <div class="mood_summary_class">
         <%= render 'mood_chart' %>
-        <div id="mood_summary_buttons">
-            <%= link_to "Back to Main Page", teacher_main_page_path, class: "btn btn-primary" %>
-            <%= link_to "Classroom Details", teacher_classroom_path(@classroom), class: "btn btn-primary" %>
+        <div id="mood_summary_buttons" style="display: flex; justify-content: center;">
+            <div class="arrow1" style="margin-right: 80px;"> <!-- Added margin-right -->
+                <%= link_to teacher_main_page_path, class: "arrow_image1" do %>
+                <%= image_tag "backarrow.png" %>
+                <% end %>
+            </div>
+            <div class="arrow1" style="margin-left: 80px;"> <!-- Added margin-left -->
+                <%= link_to teacher_classroom_path(@classroom), class: "arrow_image1" do %>
+                <%= image_tag "frontarrow.png" %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

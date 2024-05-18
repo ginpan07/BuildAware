@@ -1,18 +1,31 @@
-<h1>Welcome <%= @teacher.name %></h1>
+<div class="teacher-container">
 
-<h2>Your Classes:</h2>
-<div class="card-deck">
-  <% @classrooms.each do |classroom| %>
-    <a href="<%= mood_summary_teacher_classroom_path(classroom) %>" class="card-link">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= classroom.name %></h5>
-          <p class="card-text">Classroom ID: <%= classroom.id %></p>
-          <!-- Add any additional information about the classroom -->
+  <div class="arrow1">
+    <%= link_to destroy_teacher_session_path, data: {turbo_method: :delete}, class: "arrow_image" do %>
+    <%= image_tag "arrow6.png" %>
+    <% end %>
+  </div>
+
+  <div class="title">
+    <h2> Hello, <strong><%= current_teacher.name %></strong></h2>
+  </div>
+
+  <div class="description">
+    <p>All your classes are below</p>
+  </div>
+
+  <div class="card-deck d-flex flex-wrap">
+    <% @classrooms.each do |classroom| %>
+      <%= link_to mood_summary_teacher_classroom_path(classroom) do %>
+        <div class="classroom-card">
+          <div class="card-body">
+            <p class="card-title"><%= classroom.name %></p>
+            <p class="card-text">Classroom: <%= classroom.id %></p>
+            <!-- Add any additional information about the classroom -->
+          </div>
         </div>
-      </div>
-    </a>
-  <% end %>
+        <% end %>
+    <% end %>
 
-  <%= link_to "logout",  destroy_teacher_session_path, data: { turbo_method: :delete } %> 
+  </div>
 </div>
