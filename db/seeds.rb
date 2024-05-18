@@ -10,8 +10,8 @@
 require "faker"
 
 teacher = Teacher.new(
-  name: Faker::Name.first_name,
-  email: Faker::Internet.email,
+  name: "Will",
+  email: "teacher@gmail.com",
   password: '123456',
   role: 'teacher'
 )
@@ -54,7 +54,7 @@ end
 # puts classroom
 # Create Student instances associated with the Classroom
 
-10.times do
+9.times do
   student = Student.new(
     name: Faker::Name.first_name,
     age: rand(6..12),
@@ -63,7 +63,6 @@ end
     classroom_id: 1,
     role: 'student'
   )
-
   # student.mood.build(mood: "happy")
 
   if student.save
@@ -72,6 +71,8 @@ end
     puts "Error creating user: #{student.errors.full_messages}"
   end
 end
+
+billy = Student.create(name: "Billy", age: 9, email: "student@gmail.com", password: '123456', classroom_id: 1, role: 'student')
 
 
 happy = Mood.new(mood: "happy")
@@ -94,6 +95,7 @@ StudentMood.create(student_id: Student.find(6).id, mood_id: 2)
 StudentMood.create(student_id: Student.find(7).id, mood_id: 4)
 StudentMood.create(student_id: Student.find(8).id, mood_id: 2)
 StudentMood.create(student_id: Student.find(9).id, mood_id: 4)
+StudentMood.create(student_id: Student.find(10).id, mood_id: 4)
 
 # Happy - done
 Activity.create(description: "Hug your best friend!", mood: happy.mood)
@@ -139,6 +141,7 @@ StudentActivity.create(student_id: Student.find(6).id, activity_id: Activity.fin
 StudentActivity.create(student_id: Student.find(7).id, activity_id: Activity.find(7).id)
 StudentActivity.create(student_id: Student.find(8).id, activity_id: Activity.find(8).id)
 StudentActivity.create(student_id: Student.find(9).id, activity_id: Activity.find(9).id)
+StudentActivity.create(student_id: Student.find(10).id, activity_id: Activity.find(10).id)
 # StudentActivity.create(student_id: Student.find(10).id, activity_id: Activity.find(10).id)
 # StudentActivity.create(student_id: Student.find(1).id, activity_id: Activity.find(11).id)
 # StudentActivity.create(student_id: Student.find(2).id, activity_id: Activity.find(12).id)
