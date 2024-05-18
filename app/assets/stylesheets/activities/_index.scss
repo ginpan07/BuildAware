@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jersey+20&display=swap');
 
+.index-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .activity-container {
   margin-top: 75px;
   margin-bottom: 75px;
+  width: 100%;
 }
 
 .card-link {
@@ -18,20 +25,19 @@
   text-align: center;
   align-items: center;
   font-family: "Happy Monkey", cursive;
+  width: 80%;
   font-size: 1.5vw;
   height: 8vh;
-  margin-top: 30px;
+  margin-top: 5%;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
-  min-width: -webkit-fill-available;
-  max-width: -webkit-fill-available;
   border-radius: 40px;
   font-weight: bold;
   background: rgba(164, 163, 165, 0.5);
   // #FFF1DE (255,241,222)
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 10%;
+  margin-right: 10%;
   box-shadow: 10px 10px 5px lightblue;
 }
 
@@ -41,23 +47,23 @@
 
 }
 
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-  .card-link {
-    font-size: 24px; /* Adjust font size for smaller screens */
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
+// /* Media query for smaller screens */
+// @media screen and (max-width: 768px) {
+//   .card-link {
+//     font-size: 24px; /* Adjust font size for smaller screens */
+//     margin-left: 50px;
+//     margin-right: 50px;
+//   }
+// }
 
-/* Media query for even smaller screens */
-@media screen and (max-width: 480px) {
-  .card-link {
-    font-size: 20px; /* Further adjust font size for even smaller screens */
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
+// /* Media query for even smaller screens */
+// @media screen and (max-width: 480px) {
+//   .card-link {
+//     font-size: 20px; /* Further adjust font size for even smaller screens */
+//     margin-left: 20px;
+//     margin-right: 20px;
+//   }
+// }
 
 .arrow {
   width: 5vw; /* Set the width of the image */

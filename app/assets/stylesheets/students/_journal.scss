@@ -5,7 +5,7 @@
 h1 {
   color: #ffcb3d;
   text-align: start;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker";
   font-weight: 400;
   font-size: 7vh;
   font-style: normal;
@@ -21,7 +21,7 @@ h1 {
 h4 {
   color: #ffcb3d;
   text-align: start;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker";
   font-weight: 400;
   font-size: 4vh;
   font-style: normal;
@@ -31,7 +31,7 @@ h4 {
 h5 {
   color: #ffcb3d;
   text-align: start;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker";
   font-weight: 300;
   font-size: 2vh;
   font-style: normal;
@@ -79,7 +79,7 @@ h5 {
 .answers {
   max-height: 80vh;
   width: 40%;
-  margin-top: 5%;
+  margin-top: 0;
 }
 
 #canvas-container {
@@ -198,8 +198,4 @@ h5 {
   background: rgba(164, 163, 165, 0.5);
   font-weight: bold;
   box-shadow: 10px 10px 5px lightblue;
-}
-
-body {
-  overflow: hidden;
 }
