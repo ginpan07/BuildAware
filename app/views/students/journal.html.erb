@@ -1,3 +1,4 @@
+<body id="lock-scroll">
 <div class="arrow">
   <%= link_to students_moods_path(student_id: current_student.id), class: "arrow_image" do %>
   <%= image_tag "arrow2.png" %>
@@ -141,6 +142,7 @@
     <%= link_to "Submit", student_activities_path(student_id: @student.id, activities: :index, mood: @mood), class: "btn btn-primary btn-journal-popup" %>
   </div>
 </div>
+</body>
 
 <script>
   // Wait for the DOM content to be fully loaded
